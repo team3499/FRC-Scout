@@ -3,150 +3,150 @@
   src:url(fonts/ethnocentric.ttf);
 }
 * {
-	margin:0;
-	padding:0;
+    margin:0;
+    padding:0;
 }
 html, body {
-	height: 100%;
+    height: 100%;
 }
 html {
 
 }
 body {
-	font-family:arial;
-	color:#1C1C1C;
-	font-size:16px;
+    font-family:arial;
+    color:#1C1C1C;
+    font-size:16px;
 }
 #wrap {
-	min-height: 100%;
+    min-height: 100%;
 }
 #header{
-	background:#ccc;
+    background:#ccc;
 }
 .headerLogo{
-	text-align:center;
+    text-align:center;
 }
 .navigation{
-	text-align:center;
+    text-align:center;
 }
 .navigation a{
-	background:#00BFFF;
-	padding:10px;
-	border-radius:5px;
-	color:#fff;
-	text-shadow: -1px -1px #0091C1;
-	text-decoration:none;
-	border:1px solid #0091C1;
-	font-weight:bold;
+    background:#00BFFF;
+    padding:10px;
+    border-radius:5px;
+    color:#fff;
+    text-shadow: -1px -1px #0091C1;
+    text-decoration:none;
+    border:1px solid #0091C1;
+    font-weight:bold;
 }
 .navigation a:hover{
-	background:#00AEE8
+    background:#00AEE8
 }
 #main {
-	overflow:auto;
-	padding: 20px 10px 100px; /* BOTTOM must be same height as the footer */
-	margin:0 auto 20px; /* if footer is broken, remove the 20px */
-	width:920px;
-	border-left:1px solid #DBDBDB;
-	border-right:1px solid #DBDBDB;
-	border-bottom:1px solid #DBDBDB;
+    overflow:auto;
+    padding: 20px 10px 100px; /* BOTTOM must be same height as the footer */
+    margin:0 auto 20px; /* if footer is broken, remove the 20px */
+    width:920px;
+    border-left:1px solid #DBDBDB;
+    border-right:1px solid #DBDBDB;
+    border-bottom:1px solid #DBDBDB;
 }  
 .bar{
 }
 .barL{
-	float:left;
+    float:left;
 }
 .barR{
-	float:right;
-	text-align:right;
+    float:right;
+    text-align:right;
 }
 .barLink{
-	padding:5px;
-	background:#EFEFEF;
-	border:1px solid #D6D6D6;
-	text-decoration:none;
-	color:#1C1C1C;
-	width:100px;
-	display:block;
+    padding:5px;
+    background:#EFEFEF;
+    border:1px solid #D6D6D6;
+    text-decoration:none;
+    color:#1C1C1C;
+    width:100px;
+    display:block;
 }
 .barLink:hover{
-	background:#E2E2E2;
+    background:#E2E2E2;
 }
 .selectedL{
-	border-top:3px solid #D6D6D6;
-	border-bottom:3px solid #D6D6D6;
-	border-left:3px solid #D6D6D6;
-	border-right:3px solid #EFEFEF;
+    border-top:3px solid #D6D6D6;
+    border-bottom:3px solid #D6D6D6;
+    border-left:3px solid #D6D6D6;
+    border-right:3px solid #EFEFEF;
 }
 .selectedR{
-	border-top:3px solid #D6D6D6;
-	border-bottom:3px solid #D6D6D6;
-	border-right:3px solid #D6D6D6;
-	border-left:3px solid #EFEFEF;
+    border-top:3px solid #D6D6D6;
+    border-bottom:3px solid #D6D6D6;
+    border-right:3px solid #D6D6D6;
+    border-left:3px solid #EFEFEF;
 }
 .info{
-	border:3px solid #D6D6D6;
-	padding:10px 10px 10px;
-	margin-top:5px;
-	/*display:inline;*/
-	width:671px;
-	margin:0 auto;
-	overflow:auto;
+    border:3px solid #D6D6D6;
+    padding:10px 10px 10px;
+    margin-top:5px;
+    /*display:inline;*/
+    width:671px;
+    margin:0 auto;
+    overflow:auto;
 }
 .optionsTitle{
-	margin:0 auto;
-	width:600px;
-	text-align:center;
+    margin:0 auto;
+    width:600px;
+    text-align:center;
 }
 .options{
-	font-size:18px;
-	font-weight:bold;
+    font-size:18px;
+    font-weight:bold;
 }
 .optionsL{
-	float:left;
+    float:left;
 }
 .optionsM{
-	display:inline;
+    display:inline;
 }
 .optionsR{
-	float:right;
+    float:right;
 }
 .data{
-	padding-top:20px;
+    padding-top:20px;
 }
 .addTeam{
 
 }
 .tab1{
-	margin-left:20px;
+    margin-left:20px;
 }
 .tab2{
-	margin-left:40px;
+    margin-left:40px;
 }
 .tab3{
-	margin-left:60px;
+    margin-left:60px;
 }
 .tab4{
-	margin-left:80px;
+    margin-left:80px;
 }
 .tab5{
-	margin-left:100px;
+    margin-left:100px;
 }
 .addMatch{
 
 }
 .left{
-	float:left;
+    float:left;
 }
 .right{
-	float:right;
+    float:right;
 }
 #footer {
-	position: relative;
-	margin-top: -100px; /* negative value of footer height */
-	height: 100px;
-	clear:both;
-	background:#ccc;
+    position: relative;
+    margin-top: -100px; /* negative value of footer height */
+    height: 100px;
+    clear:both;
+    background:#ccc;
 }
 
 
@@ -155,5 +155,5 @@ body {
 
 
 h1, h2, h3, h4, h5, h6 {
-	/*font-family:ethnocentric;*/
+    /*font-family:ethnocentric;*/
 }
