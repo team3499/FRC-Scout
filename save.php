@@ -21,7 +21,7 @@ if($_POST["request"] == "create"){
   check("type", ["team", "match"]);
   if($_POST["type"] == "team"){
     check("team-number");
-    $file = fopen("team " . $_POST["team-number"] . ".txt","w");
+    $file = fopen("data/team " . $_POST["team-number"] . ".txt","w");
     
     if(!$file){
       echo "ERROR\n";

@@ -1,0 +1,5 @@
+# Files created by save.php
+data/
+
+# Ethan's deployment file
+deploy.sh
