@@ -59,8 +59,4 @@ if($_POST["request"] == "create"){
     ;
 }
 
-
-
-
-
 ?>
