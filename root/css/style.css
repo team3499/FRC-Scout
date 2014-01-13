@@ -96,6 +96,7 @@ body {
     margin:0 auto;
     width:600px;
     text-align:center;
+    display:none;
 }
 .options{
     font-size:18px;
@@ -114,7 +115,7 @@ body {
     padding-top:20px;
 }
 .addTeam{
-
+    display:none;
 }
 .tab1{
     margin-left:20px;
@@ -131,8 +132,11 @@ body {
 .tab5{
     margin-left:100px;
 }
+.tab6{
+    margin-left:120px;
+}
 .addMatch{
-
+    display:none;
 }
 .left{
     float:left;
