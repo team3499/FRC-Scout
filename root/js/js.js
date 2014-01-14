@@ -1,23 +1,24 @@
-var teams;
-var matches;
+var teams = {};
+var matches = {};
 
 var uploadStack;
 
-var showID;
+var showID = "ID0";
 
-function onld(){
-  showID = "ID0";
-//  alert("Hi");
-//  document.getElementsByClassName('addMatch')[0].style.display = "block";
-  
-  show("ID0");
-  
-  //document.getElementsByClassName('addTeam')[0].style.display = "block";
-  //document.getElementById("ID0").style.display = "block";
-  
-  teams = {};
-  matches = {};
-}
+$(document).ready(function(){
+    //showID = "ID0";
+    //show(showID);
+
+    //document.getElementsByClassName('addTeam')[0].style.display = "block";
+    //document.getElementById("ID0").style.display = "block";
+
+    //teams = {};
+    //matches = {};
+
+    $(document).resize(function(){
+    
+    });
+});
 
 function show(id){
   document.getElementById(showID).style.display = "none";
