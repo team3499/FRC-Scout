@@ -1,5 +1,5 @@
-var teams = {};
-var matches = {};
+var teams = [];
+var matches = [];
 
 var uploadStack;
 
@@ -32,46 +32,37 @@ function windowclose(){
 
 
 function addMatch(){
+    document.getElementById(showID).style.display = "none";
   
     var len = matches.length;
     
-    if(len == undefined){
-      len = -1;
-    }
-    
-    matches[len+1] = "M" + (len+1);
+    matches[len] = "M" + len;
     
     var newMatch = document.createElement("div");
     
     newMatch.innerHTML = document.getElementById("emptyMatch").innerHTML;
-    newMatch.id = "M"+(len+1);
+    newMatch.id = "M"+len;
     
     document.getElementById("container").appendChild(newMatch);
     
-    show("M"+(len+1));
-    
-    
-    
+    showID = "M"+ len;
 }
 
 function addTeam(){
+    document.getElementById(showID).style.display = "none";
     
     var len = teams.length;
-    
-    if(len == undefined){
-      len = -1;
-    }
-    
-    teams[len+1] = "T" + (len+1);
+
+    teams[len] = "T" + len;
     
     var newTeam = document.createElement("div");
     
     newTeam.innerHTML = document.getElementById("emptyTeam").innerHTML;
-    newTeam.id = "T"+(len+1);
+    newTeam.id = "T"+len;
     
     document.getElementById("container").appendChild(newTeam);
     
-    show("T"+(len+1));
+    showID = "T"+len;
 }
 
 function setMatch(){
