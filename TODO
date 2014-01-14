@@ -1,0 +1,18 @@
+TODO:
+
+Finish the options/data for matches
+
+Uploading js
+PHP receiving (see below)
+
+Have the visual js act on the viewing page.
+
+fix the 'logo'/title
+
+
+
+PHP:
+ Three request types:
+  - ping
+  - fetch
+  - post & fetch
