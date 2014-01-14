@@ -32,7 +32,7 @@ span:hover{
 span:active{
     color:#303030;
 }
-#wrap {
+#wrap { /* Contains everything */
     min-height: 100%;
 }
 #header{
@@ -44,7 +44,7 @@ span:active{
 .navigation{
     text-align:center;
 }
-.navigation span{
+.navigation span{/* The header buttons */
     background:#00BFFF;
     padding:10px;
     border-radius:5px;
@@ -57,7 +57,7 @@ span:active{
 .navigation span:hover{
     background:#00AEE8
 }
-#main {
+#main { /* Elements are within this */
     overflow:auto;
     padding: 20px 10px 100px; /* BOTTOM must be same height as the footer */
     margin:0 auto 20px; /* if footer is broken, remove the 20px */
@@ -66,51 +66,18 @@ span:active{
     border-right:1px solid #DBDBDB;
     border-bottom:1px solid #DBDBDB;
 }
-.bar{
-}
-.barL{
-    float:left;
-}
-.barR{
-    float:right;
-    text-align:right;
-}
-.barLink{
-    padding:5px;
-    background:#EFEFEF;
-    border:1px solid #D6D6D6;
-    text-decoration:none;
-    color:#1C1C1C;
-    width:100px;
-    display:block;
-}
-.barLink:hover{
-    background:#E2E2E2;
-}
-.selectedL{
-    border-top:3px solid #D6D6D6;
-    border-bottom:3px solid #D6D6D6;
-    border-left:3px solid #D6D6D6;
-    border-right:3px solid #EFEFEF;
-}
-.selectedR{
-    border-top:3px solid #D6D6D6;
-    border-bottom:3px solid #D6D6D6;
-    border-right:3px solid #D6D6D6;
-    border-left:3px solid #EFEFEF;
-}
-.viewPage{
+.viewPage{ /* Home */
     text-align:center;
 }
-.viewTeam{
+.viewTeam{ /* Team view from home */
     float:left;
     width:350px;
 }
-.viewMatch{
+.viewMatch{ /* Match view from home */
     float:right;
     width:350px;
 }
-.viewTeamBox, .viewMatchBox{
+.viewTeamBox, .viewMatchBox{ /* The boxes containing the matches and teams */
     background:#ccc;
     border:1px solid #ddd;
     box-shadow:0 0 5px #222;
@@ -125,7 +92,7 @@ span:active{
 .viewMatchBox{
     margin-right:10px;
 }
-.info{
+.info{ /* More containment */
     border:3px solid #D6D6D6;
     padding:10px 10px 10px;
     margin-top:5px;
@@ -133,7 +100,7 @@ span:active{
     width:800px;
     margin:0 auto;
 }
-.optionsTitle{
+.optionsTitle{ /* Editing teams and matches */
     margin:0 auto;
     width:600px;
     text-align:center;
@@ -155,9 +122,13 @@ span:active{
 .data{
     padding-top:20px;
 }
-.addTeam{
+.addTeam{ /* Creating new teams */
     display:none;
 }
+.addMatch{ /* Creating new matches */
+    display:none;
+}
+/* Tabs for forms */
 .tab1{
     margin-left:20px;
 }
@@ -176,9 +147,7 @@ span:active{
 .tab6{
     margin-left:120px;
 }
-.addMatch{
-    display:none;
-}
+/* Simple floating classes */
 .left{
     float:left;
 }
