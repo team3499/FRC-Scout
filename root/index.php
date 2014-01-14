@@ -37,7 +37,7 @@
         
         </div>
 
-        <div id="main"> <!-- Put everything here -->
+        <div id="main"> <!-- Put everything here / wrapper -->
         
             <div id="container" class="info"> <!-- Shows team and match info and additions -->
                 
@@ -51,7 +51,7 @@
 
     <div id="footer"> <!-- Footer -->
 
-        <div class="footerContainer"> <!-- Please don't be a douche and change the footer text ;) -->
+        <div class="footerContainer">
             
             <a href="http://team3499.org" target="_blank">
                 <img height="80" class="left" src="img/logo.png"/>
