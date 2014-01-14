@@ -7,6 +7,10 @@
     </div>
     <form method="get">
     
+    <span>Match Number: </span>
+        <input onchange="matchNumberChange()" class="tab1" type="text" name="match-number" placeholder="Ex: 5"/><br/>
+        <br/>
+        
         <div class="left">
         
             Red 1#: <input class="tab1" type="text" name="match-red-1" placeholder="Ex: 1123"/><br/>
@@ -105,7 +109,7 @@
         
         <br style="clear:both" />
         
-        <input class="right" type="submit" value="Submit Match Info" name="submit-match"/>
+<!--         <input class="right" type="submit" value="Submit Match Info" name="submit-match"/> -->
         
         <br style="clear:both" />
     </form>

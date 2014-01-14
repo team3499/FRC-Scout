@@ -25,13 +25,6 @@ span.button:hover{
     text-decoration:underline;
     cursor:pointer;
 }
-span:hover{
-    color:#494949;
-    text-decoration:underline;
-}
-span:active{
-    color:#303030;
-}
 #wrap { /* Contains everything */
     min-height: 100%;
 }

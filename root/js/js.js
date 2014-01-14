@@ -21,9 +21,24 @@ $(document).ready(function(){
 });
 
 function show(id){
-  document.getElementById(showID).style.display = "none";
-  document.getElementById(id).style.display = "block";
-  showID = id;
+    document.getElementById(showID).style.display = "none";
+    document.getElementById(id).style.display = "block";
+    
+    if(id[0] == 'M'){
+        ;// its a match
+        $("#matchDropdown option[value=" + id + "]").prop("selected", true);
+        $("#teamDropdown option[value=ID0]").prop("selected", true);
+    } else if (id[0] == 'T'){
+        ;// its a team
+        $("#matchDropdown option[value=" + id + "]").prop("selected", true);
+        $("#matchDropdown option[value=ID0]").prop("selected", true);
+    } else {
+        ;// I dont think we have to do anything...
+        $("#matchDropdown option[value=ID0]").prop("selected", true);
+        $("#teamDropdown option[value=ID0]").prop("selected", true);
+    }
+    
+    showID = id;
 }
 
 function windowclose(){
@@ -32,6 +47,10 @@ function windowclose(){
 
 
 function addMatch(){
+    // Clear the selectors
+    $("#teamDropdown option[value=ID0]").prop("selected", true);
+    $("#matchDropdown option[value=ID0]").prop("selected", true);
+    
     document.getElementById(showID).style.display = "none";
   
     var len = matches.length;
@@ -49,6 +68,10 @@ function addMatch(){
 }
 
 function addTeam(){
+    // Clear the selectors
+    $("#teamDropdown option[value=ID0]").prop("selected", true);
+    $("#matchDropdown option[value=ID0]").prop("selected", true);
+    
     document.getElementById(showID).style.display = "none";
     
     var len = teams.length;
@@ -66,7 +89,29 @@ function addTeam(){
 }
 
 function teamNumberChange(){
-    showID;
+    // Check to see if this has already been created (we need to update it).
+    if ($("#teamDropdown").find("option[value='" + showID + "']").length) {
+        // It exists
+        $("#teamDropdown").find("option[value='" + showID + "']").attr("value", showID);
+    } else { // It doesnt
+        $("#teamDropdown").append("<option value=\"" + showID + "\">Team " + $("#" + showID + " input[name='team-number']").val() + "</option>");
+    }
+    // select it
+    $("#teamDropdown option[value=" + showID + "]").prop("selected", true);
+    $("#matchDropdown option[value=ID0]").prop("selected", true);
+}
+
+function matchNumberChange(){
+    // Check to see if this has already been created (we need to update it).
+    if ($("#matchDropdown").find("option[value='" + showID + "']").length) {
+        // It exists
+        $("#matchDropdown").find("option[value='" + showID + "']").attr("value", showID);
+    } else { // It doesnt
+        $("#matchDropdown").append("<option value=\"" + showID + "\">Match " + $("#" + showID + " input[name='match-number']").val() + "</option>");
+    }
+    // select it
+    $("#teamDropdown option[value=ID0]").prop("selected", true);
+    $("#matchDropdown option[value=" + showID + "]").prop("selected", true);
 }
 
 function selectTeam(){
@@ -84,16 +129,39 @@ function dissapear(){
 }
 
 function away(){
+  
+    $("#teamDropdown option[value=ID0]").prop("selected", true);
+    $("#matchDropdown option[value=" + showID + "]").prop("selected", true);
+    
     if(showID[0] == 'M'){
         ;// its a match
+        $("#teamDropdown option[value=ID0]").prop("selected", true);
     } else if (showID[0] == 'T'){
         ;// its a team
+        $("#teamDropdown option[value=ID0]").prop("selected", true);
     } else {
         ;// I dont think we have to do anything...
+        $("#matchDropdown option[value=ID0]").prop("selected", true);
+        $("#teamDropdown option[value=ID0]").prop("selected", true);
     }
     // save/delete/page
+    $('#' + showID + ' form').serialize();
 }
 
 function addToUploadStack(id){
+    for(var i = 0; i <= uploadStack; i++){
+        ;
+        if(uploadStack[i][0] = id){
+	    uploadStack[i] = [id, ""]
+	    return;
+	}
+    }
     uploadStack[uploadStack.length] = [id, "?"];
 }
+
+function clearSelectors(){
+    // Clear the selectors
+    $("#teamDropdown option[value=ID0]").prop("selected", true);
+    $("#matchDropdown option[value=ID0]").prop("selected", true);
+}
+
