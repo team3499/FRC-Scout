@@ -181,7 +181,15 @@ span.viewTeamBox:hover, span.viewMatchBox:hover{
 }
 
 
-
+span.title {
+  text-decoration:none;
+  font-weight:bold;
+  font-size:28px;
+  font-family:"ethnocentric";
+  color:#000000;
+  text-shadow: 0 0 5px #00BFFF;
+  display:block;
+}
 
 h1, h2, h3, h4, h5, h6 {
     /*font-family:ethnocentric;*/

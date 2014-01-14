@@ -15,14 +15,15 @@
         <div id="header"> <!-- Header -->
         
             <div class="headerLogo">
-                <a href="/"><h1>Team 3499 Scout</h1></a>
+                <span class="title">Team 3499 Scout</span>
                 <br/>
             </div>
             <div class="navigation">
-                <select>
+                <select onchange="selectTeam()" id="teamDropdown">
                     <option>Select Team...</option>
-                    <option onclick="location.href='#team3499'">Team 3499</option>
-                    <option onclick="location.href='#team999'">Team 999</option>
+                    <option value="T1">Team 3499</option>
+                    <option value="T2">Team 999</option>
+                    <option value="T0">T0</option>
                 </select>
                 <span onclick="addTeam();" class="button">Add Team</span>
                 <span onclick="show('ID0');" class="button">Show Data</span>
@@ -62,13 +63,6 @@
         </div>
     
     </div>
-    
-
-
-
-
-
-
 
 </body>
 </html>

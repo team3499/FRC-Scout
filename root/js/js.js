@@ -65,18 +65,20 @@ function addTeam(){
     showID = "T"+len;
 }
 
-function setMatch(){
-  
+function teamNumberChange(){
+    showID;
 }
 
-function setTeam(){
-  
+function selectTeam(){
+    // Add something to check to see if the form being dissapeared is empty (aka to delete it)
+    show($("#teamDropdown").val());
+}
+
+function selectTeam(){
+    // Add something to check to see if the form being dissapeared is empty (aka to delete it)
+    show($("#matchDropdown").val());
 }
 
 function dissapear(){
   active.style.display = "none";
 }
-
-// addMatch;
-// addTeam;
-// optionsTitle;
