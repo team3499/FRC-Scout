@@ -86,8 +86,8 @@
             <textarea class="tab2" name="team-notes" value="" rows="5" style="width:60%;" placeholder="Ex: They have a unique shooter"/></textarea>
         
         
-        <br/><br/>
-        <input class="right" type="submit" value="Submit Team Info" name="submit-team"/>
+        <br/><br/><!--
+        <input class="right" type="submit" value="Submit Team Info" name="submit-team"/>-->
         
         <br style="clear:both" />
     </form>

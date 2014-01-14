@@ -19,8 +19,8 @@
                 <br/>
             </div>
             <div class="navigation">
-                <select onchange="selectTeam()" id="teamDropdown">
-                    <option>Select Team...</option>
+                <select id="teamDropdown" onchange="alert('hi');selectTeam();">
+                    <option value="ID0">Select Team...</option>
                     <option value="T1">Team 3499</option>
                     <option value="T2">Team 999</option>
                     <option value="T0">T0</option>
@@ -28,10 +28,10 @@
                 <span onclick="addTeam();" class="button">Add Team</span>
                 <span onclick="show('ID0');" class="button">Show Data</span>
                 <span onclick="addMatch();" class="button">Add Match</span>
-                <select>
-                    <option>Select Match...</option>
-                    <option onclick="location.href='#match10'">Match 10</option>
-                    <option onclick="location.href='#match18'">Match 18</option>
+                <select onchange="selectMatch()" id="matchDropdown">
+                    <option value="ID0">Select Match...</option>
+                    <option value="M0">Match 0</option>
+                    <option value="M1">Match 1</option>
                 </select>
             </div><br/>
         

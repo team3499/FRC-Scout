@@ -74,11 +74,15 @@ function selectTeam(){
     show($("#teamDropdown").val());
 }
 
-function selectTeam(){
+function selectMatch(){
     // Add something to check to see if the form being dissapeared is empty (aka to delete it)
     show($("#matchDropdown").val());
 }
 
 function dissapear(){
   active.style.display = "none";
+}
+
+function away(){
+    // save/delete/page
 }
