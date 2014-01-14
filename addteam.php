@@ -1,15 +1,12 @@
 <div id="emptyTeam" class="addTeam"> <!-- Create a team -->
     <h2>Add Team</h2><br/>
-    <div class="optionsTitle">
-        <span class="options optionsL">Unsaved</span>
-        <span class="options optionsM">Saved</span>
-        <span class="options optionsR">Edited</span>
-    </div>
     
     <form method="get"> <!-- I recommend changing to method="post" when finished-->
     
-        <h4>Team Number:</h4> <input type="text" name="team-number" placeholder="Ex: 3499"/><br/><br/>
-        <h4>Team Name:</h4> <input type="text" name="team-name" placeholder="Ex: River's Edge"/><br/><br/>
+        <h4>Team Number:</h4>
+            <input class="tab1" style="width:80px" type="text" name="team-number" placeholder="Ex: 3499"/><br/><br/>
+        <h4>Team Name:</h4>
+            <input class="tab1" style="width:300px" type="text" name="team-name" placeholder="Ex: River's Edge Robotics"/><br/><br/>
         
         <h4>Drive System:</h4> <!-- team-drive -->
             <input class="tab1" type="radio" name="team-drive" value="mecanum"/> Mecanum<br/>
@@ -27,7 +24,7 @@
             <input class="tab1" type="radio" name="team-catch" value="yes"/> Yes
             <input class="tab1" type="radio" name="team-catch" value="no"/> No<br/>
             <span class="tab1">Reliably:</span>
-                <input class="tab1" type="text" name="percentR" maxlength="3" placeholder="Ex: 50"/>%
+                <input class="tab1" style="width:50px;" type="text" name="percentR" maxlength="3" placeholder="Ex: 50"/>%
         
         <br/><br/>
         <h4>Pick Up:</h4> <!-- team-pickup -->
@@ -49,7 +46,7 @@
             <input class="tab1" type="radio" name="team-throw" value="no"/> No<br/>
             
             <span class="tab1">Shot Accuracy:</span>
-                <input class="tab1" type="text" name="percentT" maxlength="3" placeholder="Ex: 50"/>%
+                <input class="tab1" style="width:50px;" type="text" name="percentT" maxlength="3" placeholder="Ex: 50"/>%
             
         <br/><br/>
         <h4>Push The Ball:</h4> <!-- team-push -->
@@ -65,11 +62,11 @@
             
                 <input class="tab1" type="checkbox" name="team-autonomous-shoot" value="Low:"/> Low<br/>
                     &nbsp;&nbsp;&nbsp;<span class="tab5">Shot Accuracy:</span>
-                        <input class="tab1" type="text" name="percentSA" maxlength="3" placeholder="Ex: 50"/>%<br/>
+                        <input class="tab1" style="width:50px;" type="text" name="percent-SA" maxlength="3" placeholder="Ex: 50"/>%<br/>
                         
                 &nbsp;&nbsp;<input class="tab4" type="checkbox" name="team-autonomous" value="average"/> High<br/>
                     &nbsp;&nbsp;&nbsp;<span class="tab5">Shot Accuracy:</span>
-                        <input class="tab1" type="text" name="percentSA" maxlength="3" placeholder="Ex: 50"/>%<br/>
+                        <input class="tab1" style="width:50px;" type="text" name="percent-SA" maxlength="3" placeholder="Ex: 50"/>%<br/>
                 
                 &nbsp;&nbsp;&nbsp;<span class="tab5">Wait For Action Time:</span>
                     <input class="tab1" type="radio" name="team-autonomous-AT" value="yesAT"/> Yes
