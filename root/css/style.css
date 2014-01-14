@@ -77,14 +77,18 @@ span:active{
     float:right;
     width:350px;
 }
-.viewTeamBox, .viewMatchBox{ /* The boxes containing the matches and teams */
-    background:#ccc;
-    border:1px solid #ddd;
-    box-shadow:0 0 5px #222;
+span.viewTeamBox, span.viewMatchBox{ /* The boxes containing the matches and teams */
+    background:#cccccc;
+    border:1px solid #dddddd;
+    box-shadow:0 0 5px #222222;
     padding:20px;
     display:block;
     margin-bottom:30px;
     font-weight:bold;
+}
+span.viewTeamBox:hover, span.viewMatchBox:hover{
+    box-shadow:0 0 7px #222222;
+    cursor:pointer;
 }
 .viewTeamBox{
     margin-left:10px;
