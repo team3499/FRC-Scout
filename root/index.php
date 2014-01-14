@@ -15,7 +15,7 @@
         <div id="header"> <!-- Header -->
         
             <div class="headerLogo">
-                <span class="title">Team 3499 Scout</span>
+                <span class="title"><span class="titleWarp">Team 3499</span> <img height="100" src="img/scoutLogo.png"/></span>
                 <br/>
             </div>
             <div class="navigation">
