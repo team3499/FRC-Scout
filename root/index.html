@@ -22,8 +22,9 @@
                     <option onclick="location.href='#team3499'">Team 3499</option>
                     <option onclick="location.href='#team999'">Team 999</option>
                 </select>
-                <a href="#">Add Team</a>
-                <a href="#">Add Match</a>
+                <span onclick="addTeam();" class="button">Add Team</span>
+                <span onclick="show('ID0');" class="button">Show Data</span>
+                <span onclick="addMatch();" class="button">Add Match</span>
                 <select>
                     <option>Select Match...</option>
                     <option onclick="location.href='#match10'">Match 10</option>
@@ -35,16 +36,14 @@
 
         <div id="main"> <!-- Put everything here -->
         
-            <div class="info"> <!-- Shows team and match info and additions -->
-                <div class="optionsTitle">
-                    <span class="options optionsL">Unsaved</span>
-                    <span class="options optionsM">Saved</span>
-                    <span class="options optionsR">Edited</span>
-                </div>
+            <div id="container" class="info"> <!-- Shows team and match info and additions -->
                 
-                
-                
-                <div class="viewPage">
+                <div id="ID0" class="viewPage">
+                    <div class="optionsTitle">
+                        <span class="options optionsL">Unsaved</span>
+                        <span class="options optionsM">Saved</span>
+                        <span class="options optionsR">Edited</span>
+                    </div>
                 
                     <div class="viewTeam">
                     
@@ -69,7 +68,11 @@
                     </div>
                     
                     <div class="viewMatch">
-                    
+                        <div class="optionsTitle">
+                            <span class="options optionsL">Unsaved</span>
+                            <span class="options optionsM">Saved</span>
+                            <span class="options optionsR">Edited</span>
+                        </div>
                         <h2>Matches</h2><br/>
                         
                         <a class="viewMatchBox" href="#match10">
@@ -99,8 +102,13 @@
                 
                 
                 
-                <div class="addTeam"> <!-- Create a team -->
+                <div id="emptyTeam" class="addTeam"> <!-- Create a team -->
                     <h2>Add Team</h2><br/>
+                    <div class="optionsTitle">
+                        <span class="options optionsL">Unsaved</span>
+                        <span class="options optionsM">Saved</span>
+                        <span class="options optionsR">Edited</span>
+                    </div>
                     
                     <form method="get"> <!-- I recommend changing to method="post" when finished-->
                     
@@ -198,9 +206,13 @@
                 
                 
                 
-                <div class="addMatch"> <!-- Create a match -->
+                <div id="emptyMatch" class="addMatch"> <!-- Create a match -->
                     <h2>Add Match</h2><br/>
-                    
+                    <div class="optionsTitle">
+                        <span class="options optionsL">Unsaved</span>
+                        <span class="options optionsM">Saved</span>
+                        <span class="options optionsR">Edited</span>
+                    </div>
                     <form method="get">
                     
                         <div class="left">

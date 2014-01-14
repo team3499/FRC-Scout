@@ -17,15 +17,19 @@ body {
     color:#1C1C1C;
     font-size:16px;
 }
-a, a:visited{
+span.button{
     color:#1C1C1C;
     text-decoration:none;
 }
-a:hover{
+span.button:hover{
+    text-decoration:underline;
+    cursor:pointer;
+}
+span:hover{
     color:#494949;
     text-decoration:underline;
 }
-a:active{
+span:active{
     color:#303030;
 }
 #wrap {
@@ -40,7 +44,7 @@ a:active{
 .navigation{
     text-align:center;
 }
-.navigation a{
+.navigation span{
     background:#00BFFF;
     padding:10px;
     border-radius:5px;
@@ -50,7 +54,7 @@ a:active{
     border:1px solid #0091C1;
     font-weight:bold;
 }
-.navigation a:hover{
+.navigation span:hover{
     background:#00AEE8
 }
 #main {
@@ -199,7 +203,9 @@ a:active{
     text-align:center;
 }
 
-
+#emptyTeam, #emptyMatch {
+    display:none;
+}
 
 
 
