@@ -12,15 +12,18 @@ $(document).ready(function(){
         switch(pageView){
         default:
         case 1: // home
-            $('#addTeam').css('visibility', 'hidden');
-            $('#addMatch').css('visibility', 'hidden');
+            $('#viewPage').css('visibility', 'visible');
+            $('#addTeam').css('visibility', 'collapse');
+            $('#addMatch').css('visibility', 'collapse');
             break;
         case 2: // addTeam
+            $('#viewPage').css('visibility', 'collapse');
             $('#addTeam').css('visibility', 'visible');
-            $('#addMatch').css('visibility', 'hidden');
+            $('#addMatch').css('visibility', 'collapse');
             break;
         case 3: // addMatch
-            $('#addTeam').css('visibility', 'hidden');
+            $('#viewPage').css('visibility', 'collapse');
+            $('#addTeam').css('visibility', 'collapse');
             $('#addMatch').css('visibility', 'visible');
             break;
         }
@@ -36,10 +39,22 @@ $(document).ready(function(){
     });
 });
 
+var showID;
+
 function onld(){
   
 //  alert("Hi");
 //  document.getElementsByClassName('addMatch')[0].style.display = "block";
+  
+  showID = 0;
+  show();
+  
+  document.getElementsByClassName('addTeam')[0].style.display = "block";
+  document.getElementById("0").style.display = "block";
+}
+
+function show(){
+  document.getElementById(showID).style.display = "block";
 }
 
 function windowclose(){

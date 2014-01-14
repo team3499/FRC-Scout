@@ -17,6 +17,17 @@ body {
     color:#1C1C1C;
     font-size:16px;
 }
+a, a:visited{
+    color:#1C1C1C;
+    text-decoration:none;
+}
+a:hover{
+    color:#494949;
+    text-decoration:underline;
+}
+a:active{
+    color:#303030;
+}
 #wrap {
     min-height: 100%;
 }
@@ -50,7 +61,7 @@ span#addTeam:hover, span#addMatch:hover{
     border-left:1px solid #DBDBDB;
     border-right:1px solid #DBDBDB;
     border-bottom:1px solid #DBDBDB;
-}  
+}
 .bar{
 }
 .barL{
@@ -84,6 +95,32 @@ span#addTeam:hover, span#addMatch:hover{
     border-right:3px solid #D6D6D6;
     border-left:3px solid #EFEFEF;
 }
+.viewPage{
+    text-align:center;
+}
+.viewTeam{
+    float:left;
+    width:350px;
+}
+.viewMatch{
+    float:right;
+    width:350px;
+}
+.viewTeamBox, .viewMatchBox{
+    background:#ccc;
+    border:1px solid #ddd;
+    box-shadow:0 0 5px #222;
+    padding:20px;
+    display:block;
+    margin-bottom:30px;
+    font-weight:bold;
+}
+.viewTeamBox{
+    margin-left:10px;
+}
+.viewMatchBox{
+    margin-right:10px;
+}
 .info{
     border:3px solid #D6D6D6;
     padding:10px 10px 10px;
@@ -114,9 +151,6 @@ span#addTeam:hover, span#addMatch:hover{
 .data{
     padding-top:20px;
 }
-div#addTeam{
-    visibility:hidden;
-}
 .tab1{
     margin-left:20px;
 }
@@ -135,9 +169,17 @@ div#addTeam{
 .tab6{
     margin-left:120px;
 }
-div#addMatch{
-    visibility:hidden;
+
+div#addTeam{
+    visibility:collapse;
 }
+div#addMatch{
+    visibility:collapse;
+}
+div#viewPage{
+    visibility:collapse;
+}
+
 .left{
     float:left;
 }
@@ -151,11 +193,16 @@ div#addMatch{
     clear:both;
     background:#ccc;
 }
-
-
-
-
-
+.footerContainer, .footerContainer a{
+    width:700px;
+    margin:0 auto;
+    padding-top:10px;
+    font-size:14px;
+    color:rgb(100,100,100);
+}
+.footerText{
+    text-align:center;
+}
 
 h1, h2, h3, h4, h5, h6 {
     /*font-family:ethnocentric;*/
