@@ -1,7 +1,7 @@
 var teams = [];
 var matches = [];
 
-var uploadStack;
+var uploadStack = [];
 
 var showID = "ID0";
 
@@ -84,5 +84,16 @@ function dissapear(){
 }
 
 function away(){
+    if(showID[0] == 'M'){
+        ;// its a match
+    } else if (showID[0] == 'T'){
+        ;// its a team
+    } else {
+        ;// I dont think we have to do anything...
+    }
     // save/delete/page
+}
+
+function addToUploadStack(id){
+    uploadStack[uploadStack.length] = [id, "?"];
 }
