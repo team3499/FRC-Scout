@@ -1,10 +1,5 @@
 <div id="emptyMatch" class="addMatch"> <!-- Create a match -->
     <h2>Add Match</h2><br/>
-    <div class="optionsTitle">
-        <span class="options optionsL">Unsaved</span>
-        <span class="options optionsM">Saved</span>
-        <span class="options optionsR">Edited</span>
-    </div>
     <form method="get">
     
     <span>Match Number: </span>
@@ -107,7 +102,7 @@
         
         </div>
         
-        <br style="clear:both" />
+        <br class="clear" />
         
 <!--         <input class="right" type="submit" value="Submit Match Info" name="submit-match"/> -->
         

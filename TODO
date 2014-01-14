@@ -7,9 +7,9 @@ PHP receiving (see below)
 
 Have the visual js act on the viewing page.
 
-fix the 'logo'/title
+after creating a team/match, when selecting in the "edit" menu, show edit match/team instead of add.
 
-
+create readonly match / team pages in the view data page
 
 PHP:
  Three request types:

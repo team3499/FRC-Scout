@@ -89,6 +89,6 @@
         <br/><br/><!--
         <input class="right" type="submit" value="Submit Team Info" name="submit-team"/>-->
         
-        <br style="clear:both" />
+        <br class="clear" />
     </form>
 </div>

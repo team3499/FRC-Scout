@@ -15,8 +15,12 @@
         <div id="header"> <!-- Header -->
         
             <div class="headerLogo">
-                <span class="title"><span class="titleWarp">Team 3499</span> <img height="100" src="img/scoutLogo.png"/></span>
-                <br/>
+                <span class="title">
+                    <span class="titleLeft">Team</span>
+                    <img class="scoutLogo" height="100" src="img/scoutLogo.png"/>
+                    <span class="titleRight">3499</span>
+                </span>
+                <br class="clear"/>
             </div>
             <div class="navigation">
                 <select id="teamDropdown" onchange="selectTeam();">

@@ -172,16 +172,29 @@ span.viewTeamBox:hover, span.viewMatchBox:hover{
 #emptyTeam, #emptyMatch {
     display:none;
 }
-
-
+.clear{
+    clear:both;
+}
 span.title {
-  text-decoration:none;
-  font-weight:bold;
-  font-size:28px;
-  font-family:"ethnocentric";
-  color:#000000;
-  text-shadow: 0 0 5px #00BFFF;
-  display:block;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:28px;
+    font-family:"ethnocentric";
+    color:#000000;
+    text-shadow: 0 0 5px #00BFFF;
+    display:block;
+    width:400px;
+    margin:0 auto;
+}
+.titleLeft{
+    float:left;
+    margin-right:-60px;
+}
+.titleRight{
+    float:right;
+    margin-left:-80px;
+}
+.scoutLogo{
 }
 
 h1, h2, h3, h4, h5, h6 {
