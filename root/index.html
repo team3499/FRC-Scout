@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <head>
     <title>Team3499 Scout</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all"/>
+    <link rel="stylesheet" type="text/css" media="all" href="css/style.css"/>
     
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/js.js"></script>
 </head>
-<body onload="onld();">
+<body>
 
     <div id="wrap">
 
@@ -21,8 +23,8 @@
                     <option onclick="location.href='#team3499'">Team 3499</option>
                     <option onclick="location.href='#team999'">Team 999</option>
                 </select>
-                <a href="#">Add Team</a>
-                <a href="#">Add Match</a>
+                <span id="addTeamButton">Add Team</span>
+                <span id="addMatchButton">Add Match</span>
                 <select>
                     <option>Select Match...</option>
                     <option onclick="location.href='#match10'">Match 10</option>
@@ -40,14 +42,12 @@
                     <span class="options optionsM">Saved</span>
                     <span class="options optionsR">Edited</span>
                 </div>
-
-          
-          
                 
-                <div class="addTeam"> <!-- Create a team -->
+                
+                <div id="addTeam"> <!-- Create a team -->
                     <h2>Add Team</h2><br/>
                     
-                    <form method="get"> <!-- I recommend changing to method="post" when finished-->
+                    <form method="post"> <!-- I recommend changing to method="post" when finished-->
                     
                         <h4>Team Number:</h4> <input type="text" name="team-number" placeholder="Ex: 3499"/><br/><br/>
                         <h4>Team Name:</h4> <input type="text" name="team-name" placeholder="Ex: River's Edge"/><br/><br/>
@@ -140,13 +140,10 @@
                 </div>
                 
                 
-                
-                
-                
-                <div class="addMatch"> <!-- Create a match -->
+                <div id="addMatch"> <!-- Create a match -->
                     <h2>Add Match</h2><br/>
                     
-                    <form method="get">
+                    <form method="post">
                     
                         <div class="left">
                         
@@ -251,27 +248,13 @@
                         <br style="clear:both" />
                     </form>
                 </div>
-                
-                
-                
-                
             </div>
         </div>
-
     </div>
-
     <div id="footer"> <!-- Footer -->
 
         footer
     
     </div>
-    
-
-
-
-
-
-
-
 </body>
 </html>

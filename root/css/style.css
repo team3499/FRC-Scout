@@ -29,7 +29,7 @@ body {
 .navigation{
     text-align:center;
 }
-.navigation a{
+span#addTeamButton, span#addMatchButton{
     background:#00BFFF;
     padding:10px;
     border-radius:5px;
@@ -39,7 +39,7 @@ body {
     border:1px solid #0091C1;
     font-weight:bold;
 }
-.navigation a:hover{
+span#addTeam:hover, span#addMatch:hover{
     background:#00AEE8
 }
 #main {
@@ -114,8 +114,8 @@ body {
 .data{
     padding-top:20px;
 }
-.addTeam{
-    display:none;
+div#addTeam{
+    visibility:hidden;
 }
 .tab1{
     margin-left:20px;
@@ -135,8 +135,8 @@ body {
 .tab6{
     margin-left:120px;
 }
-.addMatch{
-    display:none;
+div#addMatch{
+    visibility:hidden;
 }
 .left{
     float:left;
