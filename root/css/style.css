@@ -31,21 +31,20 @@ span.button:hover{
 }
 #header{
     box-shadow:0 0 10px rgba(0,0,0,0.8);
-    
-background: #ededed;
-/*background: -moz-linear-gradient(top,  #ededed 0%, #d8d8d8 100%);
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#d8d8d8));
-background: -webkit-linear-gradient(top,  #ededed 0%,#d8d8d8 100%);
-background: -o-linear-gradient(top,  #ededed 0%,#d8d8d8 100%);
-background: -ms-linear-gradient(top,  #ededed 0%,#d8d8d8 100%);
-
-Jeremy, do you even HTML5? This is all obsolete. You only need the one below one. (works in firefox, chrome, ie 10+)
-*/
-background: linear-gradient(to bottom,  #ededed 0%,#d8d8d8 100%);
-/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#d8d8d8',GradientType=0 ); This is for like IE 7 or 8... WTF? */
+    background: #ededed;
+    background: linear-gradient(to bottom,  #ededed 0%,#d8d8d8 100%);
+    min-width:920px;
 }
 .headerLogo{
     text-align:center;
+}
+.year{
+    float:right;
+    transform: rotate(90deg); /* Doesnt work in chrome */
+    -webkit-transform: rotate(90deg);
+    color:#ccc;
+    font-size:50px;
+    margin-top:50px;
 }
 .navigation{
     text-align:center;
@@ -58,29 +57,15 @@ background: linear-gradient(to bottom,  #ededed 0%,#d8d8d8 100%);
     text-decoration:none;
     border:1px solid #0091C1;
     font-weight:bold;
-    
-background: #00bfff;
-/*background: -moz-linear-gradient(top,  #00bfff 0%, #0097fc 100%);
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00bfff), color-stop(100%,#0097fc));
-background: -webkit-linear-gradient(top,  #00bfff 0%,#0097fc 100%);
-background: -o-linear-gradient(top,  #00bfff 0%,#0097fc 100%);
-background: -ms-linear-gradient(top,  #00bfff 0%,#0097fc 100%);*/
-background: linear-gradient(to bottom,  #00bfff 0%,#0097fc 100%);
-/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00bfff', endColorstr='#0097fc',GradientType=0 );*/
+    background: #00bfff;
+    background: linear-gradient(to bottom,  #00bfff 0%,#0097fc 100%);
 }
 .navigation span:hover{
     background:#00AEE8
 }
 .navigation span:active{
-
-background: #0097fc;
-/*background: -moz-linear-gradient(top,  #0097fc 0%, #00bfff 100%);
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0097fc), color-stop(100%,#00bfff));
-background: -webkit-linear-gradient(top,  #0097fc 0%,#00bfff 100%);
-background: -o-linear-gradient(top,  #0097fc 0%,#00bfff 100%);
-background: -ms-linear-gradient(top,  #0097fc 0%,#00bfff 100%);*/
-background: linear-gradient(to bottom,  #0097fc 0%,#00bfff 100%);
-/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0097fc', endColorstr='#00bfff',GradientType=0 );*/
+    background: #0097fc;
+    background: linear-gradient(to bottom,  #0097fc 0%,#00bfff 100%);
 }
 #main { /* Elements are within this */
     overflow:auto;
@@ -178,15 +163,8 @@ div#pageTeam{
     height: 100px;
     clear:both;
     box-shadow:0 0 10px rgba(0,0,0,0.8);
-    
-background: #d8d8d8;
-/*background: -moz-linear-gradient(top,  #d8d8d8 0%, #ededed 100%);
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d8d8d8), color-stop(100%,#ededed));
-background: -webkit-linear-gradient(top,  #d8d8d8 0%,#ededed 100%);
-background: -o-linear-gradient(top,  #d8d8d8 0%,#ededed 100%);
-background: -ms-linear-gradient(top,  #d8d8d8 0%,#ededed 100%);*/
-background: linear-gradient(to bottom,  #d8d8d8 0%,#ededed 100%);
-/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8d8d8', endColorstr='#ededed',GradientType=0 );*/
+    background: #d8d8d8;
+    background: linear-gradient(to bottom,  #d8d8d8 0%,#ededed 100%);
 }
 .footerContainer, .footerContainer a{
     width:700px;

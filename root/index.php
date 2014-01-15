@@ -14,6 +14,7 @@
 
         <div id="header"> <!-- Header -->
         
+            <p class="year" title="Aerial Assault">2014</p> <!-- Change for every year -->
             <div class="headerLogo">
                 <span class="title">
                     <span class="titleLeft">Team</span>
@@ -63,7 +64,8 @@
             </a>
             
             <p class="footerText">
-                Created By <a href="http://team3499.org" target="_blank" title="team3499.org">Team 3499</a>
+                Created By <a href="http://team3499.org" target="_blank" title="team3499.org">Team 3499</a><br/>
+                <small>Team Fortress 2 scout character and fonts are trademarked by <a style="font-size:10px;" target="_blank" href="http://www.valvesoftware.com/">Valve Software</a></small>
             </p>
         </div>
     
