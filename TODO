@@ -9,10 +9,14 @@ Have the visual js act on the viewing page.
 
 after creating a team/match, when selecting in the "edit" menu, show edit match/team instead of add.
 
-create readonly match / team pages in the view data page
+create readonly match page in the view data page
+
+make team page work
 
 PHP:
  Three request types:
   - ping
   - fetch
   - post & fetch
+
+edit the todo list

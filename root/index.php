@@ -43,6 +43,7 @@
                 <?php include("../showdata.php") ?>
                 <?php include("../addteam.php") ?>
                 <?php include("../addmatch.php") ?>
+                <?php include("../pageteam.php") ?>
                 
             </div>
         </div>
@@ -53,7 +54,7 @@
         <div class="footerContainer">
             
             <a href="http://team3499.org" target="_blank">
-                <img height="80" class="left" src="img/logo.png"/>
+                <img height="75" class="left" src="img/logo.png"/>
             </a>
             
             <p class="footerText">
