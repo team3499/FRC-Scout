@@ -1,6 +1,6 @@
 @font-face{
-  font-family:ethnocentric;
-  src:url(/fonts/ethnocentric.ttf);
+    font-family:ethnocentric;
+    src:url(/fonts/ethnocentric.ttf);
 }
 * {
     margin:0;
@@ -33,14 +33,16 @@ span.button:hover{
     box-shadow:0 0 10px rgba(0,0,0,0.8);
     
 background: #ededed;
-background: -moz-linear-gradient(top,  #ededed 0%, #d8d8d8 100%);
+/*background: -moz-linear-gradient(top,  #ededed 0%, #d8d8d8 100%);
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#d8d8d8));
 background: -webkit-linear-gradient(top,  #ededed 0%,#d8d8d8 100%);
 background: -o-linear-gradient(top,  #ededed 0%,#d8d8d8 100%);
 background: -ms-linear-gradient(top,  #ededed 0%,#d8d8d8 100%);
-background: linear-gradient(to bottom,  #ededed 0%,#d8d8d8 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#d8d8d8',GradientType=0 );
 
+Jeremy, do you even HTML5? This is all obsolete. You only need the one below one. (works in firefox, chrome, ie 10+)
+*/
+background: linear-gradient(to bottom,  #ededed 0%,#d8d8d8 100%);
+/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#d8d8d8',GradientType=0 ); This is for like IE 7 or 8... WTF? */
 }
 .headerLogo{
     text-align:center;
@@ -58,14 +60,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', end
     font-weight:bold;
     
 background: #00bfff;
-background: -moz-linear-gradient(top,  #00bfff 0%, #0097fc 100%);
+/*background: -moz-linear-gradient(top,  #00bfff 0%, #0097fc 100%);
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00bfff), color-stop(100%,#0097fc));
 background: -webkit-linear-gradient(top,  #00bfff 0%,#0097fc 100%);
 background: -o-linear-gradient(top,  #00bfff 0%,#0097fc 100%);
-background: -ms-linear-gradient(top,  #00bfff 0%,#0097fc 100%);
+background: -ms-linear-gradient(top,  #00bfff 0%,#0097fc 100%);*/
 background: linear-gradient(to bottom,  #00bfff 0%,#0097fc 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00bfff', endColorstr='#0097fc',GradientType=0 );
-
+/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00bfff', endColorstr='#0097fc',GradientType=0 );*/
 }
 .navigation span:hover{
     background:#00AEE8
@@ -73,15 +74,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00bfff', end
 .navigation span:active{
 
 background: #0097fc;
-background: -moz-linear-gradient(top,  #0097fc 0%, #00bfff 100%);
+/*background: -moz-linear-gradient(top,  #0097fc 0%, #00bfff 100%);
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0097fc), color-stop(100%,#00bfff));
 background: -webkit-linear-gradient(top,  #0097fc 0%,#00bfff 100%);
 background: -o-linear-gradient(top,  #0097fc 0%,#00bfff 100%);
-background: -ms-linear-gradient(top,  #0097fc 0%,#00bfff 100%);
+background: -ms-linear-gradient(top,  #0097fc 0%,#00bfff 100%);*/
 background: linear-gradient(to bottom,  #0097fc 0%,#00bfff 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0097fc', endColorstr='#00bfff',GradientType=0 );
-
-
+/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0097fc', endColorstr='#00bfff',GradientType=0 );*/
 }
 #main { /* Elements are within this */
     overflow:auto;
@@ -122,6 +121,14 @@ span.viewTeamBox:hover, span.viewMatchBox:hover{
 .viewMatchBox{
     margin-right:10px;
 }
+
+div#pageMatch{
+    display:none;
+}
+div#pageTeam{
+    display:none;
+}
+
 .info{ /* More containment */
     border:3px solid #D6D6D6;
     padding:10px 10px 10px;
@@ -173,14 +180,13 @@ span.viewTeamBox:hover, span.viewMatchBox:hover{
     box-shadow:0 0 10px rgba(0,0,0,0.8);
     
 background: #d8d8d8;
-background: -moz-linear-gradient(top,  #d8d8d8 0%, #ededed 100%);
+/*background: -moz-linear-gradient(top,  #d8d8d8 0%, #ededed 100%);
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d8d8d8), color-stop(100%,#ededed));
 background: -webkit-linear-gradient(top,  #d8d8d8 0%,#ededed 100%);
 background: -o-linear-gradient(top,  #d8d8d8 0%,#ededed 100%);
-background: -ms-linear-gradient(top,  #d8d8d8 0%,#ededed 100%);
+background: -ms-linear-gradient(top,  #d8d8d8 0%,#ededed 100%);*/
 background: linear-gradient(to bottom,  #d8d8d8 0%,#ededed 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8d8d8', endColorstr='#ededed',GradientType=0 );
-
+/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8d8d8', endColorstr='#ededed',GradientType=0 );*/
 }
 .footerContainer, .footerContainer a{
     width:700px;
@@ -239,4 +245,5 @@ span.title {
     color:#D10C0C;
 }
 h1, h2, h3, h4, h5, h6 {
+
 }

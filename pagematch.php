@@ -1,9 +1,6 @@
-    <div class="pageMatch">
-    
+<div id="pageMatch">
     <h2>Match <span>$10</span></h2><br/>
-        
     <div class="left">
-    
         Red 1#: <span>$3333</span><br/> <!-- Make these links too -->
         Red 2#: <span>$3334</span><br/>
         Red 3#: <span>$3335</span>
@@ -33,7 +30,7 @@
             <br/><br/>
     </div>
     <div class="rightSide">
-    
+
         Blue 1#: <span>$3336</span><br/> <!-- Make these links too -->
         Blue 2#: <span>$3337</span><br/>
         Blue 3#: <span>$3338</span>
@@ -62,7 +59,5 @@
                 
             <br/><br/>
     </div>
-    
     <br class="clear"/>
-    
-    </div>
+</div>
