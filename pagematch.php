@@ -4,7 +4,7 @@
         
     <div class="left">
     
-        Red 1#: <span>$3333</span><br/>
+        Red 1#: <span>$3333</span><br/> <!-- Make these links too -->
         Red 2#: <span>$3334</span><br/>
         Red 3#: <span>$3335</span>
         
@@ -34,7 +34,7 @@
     </div>
     <div class="right" style="margin-right:90px;">
     
-        Blue 1#: <span>$3336</span><br/>
+        Blue 1#: <span>$3336</span><br/> <!-- Make these links too -->
         Blue 2#: <span>$3337</span><br/>
         Blue 3#: <span>$3338</span>
         
@@ -64,7 +64,5 @@
     </div>
     
     <br class="clear"/>
-    
-    
     
     </div>

@@ -1,9 +1,4 @@
 <div id="ID0" class="viewPage">
-    <div class="optionsTitle">
-        <span class="options optionsL">Unsaved</span>
-        <span class="options optionsM">Saved</span>
-        <span class="options optionsR">Edited</span>
-    </div>
 
     <div class="viewTeam">
         <h2>Teams</h2><br/>
@@ -25,11 +20,6 @@
     </div>
     
     <div class="viewMatch">
-        <div class="optionsTitle">
-            <span class="options optionsL">Unsaved</span>
-            <span class="options optionsM">Saved</span>
-            <span class="options optionsR">Edited</span>
-        </div>
         <h2>Matches</h2><br/>
         <span class="viewMatchBox" href="#match10">
             Match 10

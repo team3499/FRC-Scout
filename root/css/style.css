@@ -97,15 +97,6 @@ span.viewTeamBox:hover, span.viewMatchBox:hover{
     width:800px;
     margin:0 auto;
 }
-.optionsL{
-    float:left;
-}
-.optionsM{
-    display:inline;
-}
-.optionsR{
-    float:right;
-}
 .data{
     padding-top:20px;
 }
