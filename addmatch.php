@@ -54,7 +54,7 @@
                     
                 <br/><br/>
         </div>
-        <div class="right" style="margin-right:90px;">
+        <div class="rightSide">
         
             Blue 1#: <input class="tab1" type="text" name="match-blue-1" placeholder="Ex: 1124"/><br/>
             Blue 2#: <input class="tab1" type="text" name="match-blue-2" placeholder="Ex: 2313"/><br/>

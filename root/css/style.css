@@ -14,8 +14,9 @@ html {
 }
 body {
     font-family:arial;
-    color:#1C1C1C;
+    color:#222;
     font-size:16px;
+    background:#f9f9f9;
 }
 span.button{
     color:#1C1C1C;
@@ -29,7 +30,17 @@ span.button:hover{
     min-height: 100%;
 }
 #header{
-    background:#ccc;
+    box-shadow:0 0 10px rgba(0,0,0,0.8);
+    
+background: #ededed;
+background: -moz-linear-gradient(top,  #ededed 0%, #d8d8d8 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#d8d8d8));
+background: -webkit-linear-gradient(top,  #ededed 0%,#d8d8d8 100%);
+background: -o-linear-gradient(top,  #ededed 0%,#d8d8d8 100%);
+background: -ms-linear-gradient(top,  #ededed 0%,#d8d8d8 100%);
+background: linear-gradient(to bottom,  #ededed 0%,#d8d8d8 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#d8d8d8',GradientType=0 );
+
 }
 .headerLogo{
     text-align:center;
@@ -38,7 +49,6 @@ span.button:hover{
     text-align:center;
 }
 .navigation span{/* The header buttons */
-    background:#00BFFF;
     padding:10px;
     border-radius:5px;
     color:#fff;
@@ -46,18 +56,41 @@ span.button:hover{
     text-decoration:none;
     border:1px solid #0091C1;
     font-weight:bold;
+    
+background: #00bfff;
+background: -moz-linear-gradient(top,  #00bfff 0%, #0097fc 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00bfff), color-stop(100%,#0097fc));
+background: -webkit-linear-gradient(top,  #00bfff 0%,#0097fc 100%);
+background: -o-linear-gradient(top,  #00bfff 0%,#0097fc 100%);
+background: -ms-linear-gradient(top,  #00bfff 0%,#0097fc 100%);
+background: linear-gradient(to bottom,  #00bfff 0%,#0097fc 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00bfff', endColorstr='#0097fc',GradientType=0 );
+
 }
 .navigation span:hover{
     background:#00AEE8
+}
+.navigation span:active{
+
+background: #0097fc;
+background: -moz-linear-gradient(top,  #0097fc 0%, #00bfff 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0097fc), color-stop(100%,#00bfff));
+background: -webkit-linear-gradient(top,  #0097fc 0%,#00bfff 100%);
+background: -o-linear-gradient(top,  #0097fc 0%,#00bfff 100%);
+background: -ms-linear-gradient(top,  #0097fc 0%,#00bfff 100%);
+background: linear-gradient(to bottom,  #0097fc 0%,#00bfff 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0097fc', endColorstr='#00bfff',GradientType=0 );
+
+
 }
 #main { /* Elements are within this */
     overflow:auto;
     padding: 20px 10px 100px; /* BOTTOM must be same height as the footer */
     margin:0 auto 20px; /* if footer is broken, remove the 20px */
     width:920px;
-    border-left:1px solid #DBDBDB;
-    border-right:1px solid #DBDBDB;
-    border-bottom:1px solid #DBDBDB;
+    border-left:1px solid #B1B1B1;
+    border-right:1px solid #B1B1B1;
+    border-bottom:1px solid #B1B1B1;
 }
 .viewPage{ /* Home */
     text-align:center;
@@ -137,7 +170,17 @@ span.viewTeamBox:hover, span.viewMatchBox:hover{
     margin-top: -100px; /* negative value of footer height */
     height: 100px;
     clear:both;
-    background:#ccc;
+    box-shadow:0 0 10px rgba(0,0,0,0.8);
+    
+background: #d8d8d8;
+background: -moz-linear-gradient(top,  #d8d8d8 0%, #ededed 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d8d8d8), color-stop(100%,#ededed));
+background: -webkit-linear-gradient(top,  #d8d8d8 0%,#ededed 100%);
+background: -o-linear-gradient(top,  #d8d8d8 0%,#ededed 100%);
+background: -ms-linear-gradient(top,  #d8d8d8 0%,#ededed 100%);
+background: linear-gradient(to bottom,  #d8d8d8 0%,#ededed 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8d8d8', endColorstr='#ededed',GradientType=0 );
+
 }
 .footerContainer, .footerContainer a{
     width:700px;
@@ -174,6 +217,12 @@ span.title {
 .titleRight{
     float:right;
     margin-left:-80px;
+}
+.rightSide{
+    float:right;
+    margin-right:90px;
+    border-left:1px solid #ccc;
+    padding-left:50px;
 }
 .scoutLogo{
 }

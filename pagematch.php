@@ -32,7 +32,7 @@
                 
             <br/><br/>
     </div>
-    <div class="right" style="margin-right:90px;">
+    <div class="rightSide">
     
         Blue 1#: <span>$3336</span><br/> <!-- Make these links too -->
         Blue 2#: <span>$3337</span><br/>

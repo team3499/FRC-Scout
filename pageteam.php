@@ -44,7 +44,7 @@
             <h4>Notes:</h4> <span class="tab1">$such notes wow</span>
             
         </div>
-        <div class="right" style="margin-right:90px;">
+        <div class="rightSide">
         
             <h2>Included Matches:</h2><br/>
             

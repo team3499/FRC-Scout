@@ -48,7 +48,7 @@
             
         <br/><br/>
         <h4>Push The Ball:</h4> <!-- team-push -->
-            <textarea class="tab2" name="team-push" value="" rows="5" style="width:60%;" placeholder="The robot herds by..."/></textarea>
+            <textarea class="tab2" name="team-push" value="" rows="5" style="width:60%;" placeholder="Ex: The robot herds by..."/></textarea>
             
         <br/><br/>
         <h4>Autonomous:</h4> <!-- team-autonomous -->
