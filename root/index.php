@@ -44,6 +44,12 @@
                 <?php include("../addteam.php") ?>
                 <?php include("../addmatch.php") ?>
                 <?php include("../pageteam.php") ?>
+                <?php include("../pagematch.php") ?>
+                
+                <!-- Test colors -->
+                <p class="good">Good</p>
+                <p class="okay">Okay</p>
+                <p class="bad">Bad</p>
                 
             </div>
         </div>

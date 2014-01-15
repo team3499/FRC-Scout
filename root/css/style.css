@@ -97,16 +97,6 @@ span.viewTeamBox:hover, span.viewMatchBox:hover{
     width:800px;
     margin:0 auto;
 }
-.optionsTitle{ /* Editing teams and matches */
-    margin:0 auto;
-    width:600px;
-    text-align:center;
-    display:none;
-}
-.options{
-    font-size:18px;
-    font-weight:bold;
-}
 .optionsL{
     float:left;
 }
@@ -199,6 +189,14 @@ span.title {
 .inline{
     display:inline;
 }
+.good{
+    color:#1AD60C;
+}
+.okay{
+    color:#C4B20F;
+}
+.bad{
+    color:#D10C0C;
+}
 h1, h2, h3, h4, h5, h6 {
-    /*font-family:ethnocentric;*/
 }
