@@ -41,6 +41,9 @@
         <br/><br/>
         <h4>Notes:</h4> <span class="tab1">$such notes wow</span>
         
+        <br/><br/><br/>
+        <span class="button">Edit Team</span><br/><br/>
+    
     </div>
     <div class="rightSide">
     
@@ -55,5 +58,4 @@
     </div>
     
     <br class="clear"/>
-    
 </div>

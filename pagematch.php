@@ -26,8 +26,9 @@
                 
             <br/><br/>
             <span class="tab2">Drive To Zone:</span> <span>$No</span>
-                
-            <br/><br/>
+            
+            <br/><br/><br/>
+            <span class="button">Edit Match</span><br/><br/>
     </div>
     <div class="rightSide">
 

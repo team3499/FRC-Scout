@@ -18,14 +18,6 @@ body {
     font-size:16px;
     background:#f9f9f9;
 }
-span.button{
-    color:#1C1C1C;
-    text-decoration:none;
-}
-span.button:hover{
-    text-decoration:underline;
-    cursor:pointer;
-}
 #wrap { /* Contains everything */
     min-height: 100%;
 }
@@ -49,21 +41,23 @@ span.button:hover{
 .navigation{
     text-align:center;
 }
-.navigation span{/* The header buttons */
+.button{
+    color:#fff;
+    text-decoration:none;
     padding:10px;
     border-radius:5px;
-    color:#fff;
     text-shadow: -1px -1px #0091C1;
-    text-decoration:none;
     border:1px solid #0091C1;
     font-weight:bold;
     background: #00bfff;
     background: linear-gradient(to bottom,  #00bfff 0%,#0097fc 100%);
 }
-.navigation span:hover{
-    background:#00AEE8
+.button:hover{
+    text-decoration:underline;
+    cursor:pointer;
+    background:#00AEE8;
 }
-.navigation span:active{
+.button:active{
     background: #0097fc;
     background: linear-gradient(to bottom,  #0097fc 0%,#00bfff 100%);
 }
@@ -88,7 +82,7 @@ span.button:hover{
     width:350px;
 }
 span.viewTeamBox, span.viewMatchBox{ /* The boxes containing the matches and teams */
-    background:#cccccc;
+    background: linear-gradient(to bottom, #cccccc 0%,#bbbbbb 100%);
     border:1px solid #dddddd;
     box-shadow:0 0 5px #222222;
     padding:20px;
@@ -97,8 +91,12 @@ span.viewTeamBox, span.viewMatchBox{ /* The boxes containing the matches and tea
     font-weight:bold;
 }
 span.viewTeamBox:hover, span.viewMatchBox:hover{
+    background:#c5c5c5;
     box-shadow:0 0 7px #222222;
     cursor:pointer;
+}
+span.viewTeamBox:active, span.viewMatchBox:active{
+    background: linear-gradient(to bottom, #bbbbbb 0%,#cccccc 100%);
 }
 .viewTeamBox{
     margin-left:10px;
@@ -115,7 +113,7 @@ div#pageTeam{
 }
 
 .info{ /* More containment */
-    border:3px solid #D6D6D6;
+    /*border:3px solid #D6D6D6;*/
     padding:10px 10px 10px;
     margin-top:5px;
     /*display:inline;*/
@@ -204,7 +202,7 @@ span.title {
 }
 .rightSide{
     float:right;
-    margin-right:90px;
+    margin-right:70px;
     border-left:1px solid #ccc;
     padding-left:50px;
 }
