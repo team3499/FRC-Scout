@@ -3,8 +3,8 @@
     
     <form method="get"> <!-- I recommend changing to method="post" when finished-->
     
-        <h4>Team Number:</h4> <input type="text" name="team-number" placeholder="Ex: 3499" onchange="teamNumberChange()"/><br/><br/>
-        <h4>Team Name:</h4> <input type="text" name="team-name" placeholder="Ex: River's Edge"/><br/><br/>
+        <h4 class="inline">Team Number:</h4> <input class="tab1" type="text" name="team-number" placeholder="Ex: 3499" onchange="teamNumberChange()"/><br/><br/>
+        <h4 class="inline">Team Name:</h4> <input class="tab1" type="text" name="team-name" placeholder="Ex: River's Edge"/><br/><br/>
         
         <h4>Drive System:</h4> <!-- team-drive -->
             <input class="tab1" type="radio" name="team-drive" value="mecanum"/> Mecanum<br/>
