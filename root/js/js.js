@@ -165,3 +165,26 @@ function clearSelectors(){
     $("#matchDropdown option[value=ID0]").prop("selected", true);
 }
 
+function updatenumberr1(){
+    $("#" + showID + " span.match-team-number-r1").html($("#" + showID + " form input[name='match-number-red-1']").val());
+}
+
+function updatenumberr2(){
+    $("#" + showID + " span.match-team-number-r2").html($("#" + showID + " form input[name='match-number-red-2']").val());
+}
+
+function updatenumberr3(){
+    $("#" + showID + " span.match-team-number-r3").html($("#" + showID + " form input[name='match-number-red-3']").val());
+}
+
+function updatenumberb1(){
+    $("#" + showID + " span.match-team-number-b1").html($("#" + showID + " form input[name='match-number-blue-1']").val());
+}
+
+function updatenumberb2(){
+    $("#" + showID + " span.match-team-number-b2").html($("#" + showID + " form input[name='match-number-blue-2']").val());
+}
+
+function updatenumberb3(){
+    $("#" + showID + " span.match-team-number-b3").html($("#" + showID + " form input[name='match-number-blue-3']").val());
+}

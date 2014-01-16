@@ -8,13 +8,13 @@
         
         <div class="left">
         
-            Red 1#: <input class="tab1" type="text" name="match-red-1" placeholder="Ex: 1123"/><br/>
-            Red 2#: <input class="tab1" type="text" name="match-red-2" placeholder="Ex: 2312"/><br/>
-            Red 3#: <input class="tab1" type="text" name="match-red-3" placeholder="Ex: 3567"/>
+            Red 1#: <input onchange="updatenumberr1();" class="tab1" type="text" name="match-number-red-1" placeholder="Ex: 1123"/><br/>
+            Red 2#: <input onchange="updatenumberr2();" class="tab1" type="text" name="match-number-red-2" placeholder="Ex: 2312"/><br/>
+            Red 3#: <input onchange="updatenumberr3();" class="tab1" type="text" name="match-number-red-3" placeholder="Ex: 3567"/>
             
             <br/><br/>
             <h4>Autonomous:</h4>
-                <span class="tab1">Red 1 (<span>js to show team</span>):</span><br/>
+                <span class="tab1">Red 1 (<span class="match-team-number-r1">js to show team</span>):</span><br/>
                     <span class="tab2">Score:</span> <!-- match-red-1-score -->
                         <input class="tab1" type="radio" name="match-red-1-score" value="high-action"/> High w/ Action<br/>
                         &nbsp;&nbsp;<input class="tab5" type="radio" name="match-red-1-score" value="high"/> High<br/>
@@ -27,7 +27,7 @@
                     <input class="tab1" type="radio" name="match-red-1-drive" value="no"/> No
                     
                 <br/><br/>
-                <span class="tab1">Red 2 (<span>js to show team</span>):</span><br/>
+                <span class="tab1">Red 2 (<span class="match-team-number-r2">js to show team</span>):</span><br/>
                     <span class="tab2">Score:</span> <!-- match-red-2-score -->
                         <input class="tab1" type="radio" name="match-red-2-score" value="high-action"/> High w/ Action<br/>
                         &nbsp;&nbsp;<input class="tab5" type="radio" name="match-red-2-score" value="high"/> High<br/>
@@ -40,7 +40,7 @@
                     <input class="tab1" type="radio" name="match-red-2-drive" value="no"/> No
                     
                 <br/><br/>
-                <span class="tab1">Red 3 (<span>js to show team</span>):</span><br/>
+                <span class="tab1">Red 3 (<span class="match-team-number-r3">js to show team</span>):</span><br/>
                     <span class="tab2">Score:</span> <!-- match-red-3-score -->
                         <input class="tab1" type="radio" name="match-red-3-score" value="high-action"/> High w/ Action<br/>
                         &nbsp;&nbsp;<input class="tab5" type="radio" name="match-red-3-score" value="high"/> High<br/>
@@ -56,13 +56,13 @@
         </div>
         <div class="rightSide">
         
-            Blue 1#: <input class="tab1" type="text" name="match-blue-1" placeholder="Ex: 1124"/><br/>
-            Blue 2#: <input class="tab1" type="text" name="match-blue-2" placeholder="Ex: 2313"/><br/>
-            Blue 3#: <input class="tab1" type="text" name="match-blue-3" placeholder="Ex: 3568"/>
+            Blue 1#: <input onchange="updatenumberb1();" class="tab1" type="text" name="match-number-blue-1" placeholder="Ex: 1124"/><br/>
+            Blue 2#: <input onchange="updatenumberb2();" class="tab1" type="text" name="match-number-blue-2" placeholder="Ex: 2313"/><br/>
+            Blue 3#: <input onchange="updatenumberb3();" class="tab1" type="text" name="match-number-blue-3" placeholder="Ex: 3568"/>
             
             <br/><br/>
             <h4>Autonomous:</h4>
-                <span class="tab1">Blue 1 (<span>js to show team</span>):</span><br/>
+                <span class="tab1">Blue 1 (<span class="match-team-number-b1">js to show team</span>):</span><br/>
                     <span class="tab2">Score:</span> <!-- match-blue-1-score -->
                         <input class="tab1" type="radio" name="match-blue-1-score" value="high-action"/> High w/ Action<br/>
                         &nbsp;&nbsp;<input class="tab5" type="radio" name="match-blue-1-score" value="high"/> High<br/>
@@ -75,7 +75,7 @@
                     <input class="tab1" type="radio" name="match-blue-1-drive" value="no"/> No
                     
                 <br/><br/>
-                <span class="tab1">Blue 2 (<span>js to show team</span>):</span><br/>
+                <span class="tab1">Blue 2 (<span class="match-team-number-b2">js to show team</span>):</span><br/>
                     <span class="tab2">Score:</span> <!-- match-blue-2-score -->
                         <input class="tab1" type="radio" name="match-blue-2-score" value="high-action"/> High w/ Action<br/>
                         &nbsp;&nbsp;<input class="tab5" type="radio" name="match-blue-2-score" value="high"/> High<br/>
@@ -88,7 +88,7 @@
                     <input class="tab1" type="radio" name="match-blue-2-drive" value="no"/> No
                     
                 <br/><br/>
-                <span class="tab1">Blue 3 (<span>js to show team</span>):</span><br/>
+                <span class="tab1">Blue 3 (<span class="match-team-number-b3">js to show team</span>):</span><br/>
                     <span class="tab2">Score:</span> <!-- match-blue-3-score -->
                         <input class="tab1" type="radio" name="match-blue-3-score" value="high-action"/> High w/ Action<br/>
                         &nbsp;&nbsp;<input class="tab5" type="radio" name="match-blue-3-score" value="high"/> High<br/>
