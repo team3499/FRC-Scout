@@ -25,13 +25,13 @@
             </div>
             <div class="navigation">
                 <select id="teamDropdown">
-                    <option value="ID0">Select Team...</option>
+                    <option value="ID0">Edit Team...</option>
                 </select>
                 <span id="addTeamButton" class="button">Add Team</span>
                 <span id="showDataButton" class="button">Show Data</span>
                 <span id="addMatchButton" class="button">Add Match</span>
                 <select id="matchDropdown">
-                    <option value="ID0">Select Match...</option>
+                    <option value="ID0">Edit Match...</option>
                 </select>
             </div><br/>
         
