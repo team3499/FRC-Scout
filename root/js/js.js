@@ -14,9 +14,43 @@ $(document).ready(function(){
 
     //teams = {};
     //matches = {};
-
+    
+    /*
+    if(readCookie("viewMode") != null){
+        show(readCookie("viewMode"));
+    } else {
+        createCookie("viewMode", "ID0", 1);
+    }
+    */
+    
     $(document).resize(function(){
     
+    });
+    
+    $('#showDataButton').click(function(){
+        console.log("show data click");
+        createCookie("viewMode", "ID0", 1);
+        show('ID0');
+        clearSelectors();
+    });
+    $('#addTeamButton').click(function(){
+        console.log("add team click");
+        addTeam();
+    });
+    $('#addMatchButton').click(function(){
+        console.log("add match click");
+        addMatch();
+    });
+    
+    $('#teamDropdown').change(function(){
+        selectTeam();
+    });
+    $('#matchDropdown').change(function(){
+        selectMatch();
+    });
+    
+    $('.viewMatchBox').click(function(obj){
+        obj.attr('team');
     });
 });
 
@@ -45,6 +79,27 @@ function windowclose(){
   
 }
 
+function addTeam(){
+    // Clear the selectors
+    $("#teamDropdown option[value=ID0]").prop("selected", true);
+    $("#matchDropdown option[value=ID0]").prop("selected", true);
+    
+    document.getElementById(showID).style.display = "none";
+    
+    var len = teams.length;
+
+    teams[len] = "T" + len;
+    
+    var newTeam = document.createElement("div");
+    
+    newTeam.innerHTML = document.getElementById("emptyTeam").innerHTML;
+    newTeam.id = "T"+len;
+    
+    document.getElementById("container").appendChild(newTeam);
+    
+    showID = "T"+len;
+    createCookie("viewMode", showID, 1);
+}
 
 function addMatch(){
     // Clear the selectors
@@ -65,27 +120,7 @@ function addMatch(){
     document.getElementById("container").appendChild(newMatch);
     
     showID = "M"+ len;
-}
-
-function addTeam(){
-    // Clear the selectors
-    $("#teamDropdown option[value=ID0]").prop("selected", true);
-    $("#matchDropdown option[value=ID0]").prop("selected", true);
-    
-    document.getElementById(showID).style.display = "none";
-    
-    var len = teams.length;
-
-    teams[len] = "T" + len;
-    
-    var newTeam = document.createElement("div");
-    
-    newTeam.innerHTML = document.getElementById("emptyTeam").innerHTML;
-    newTeam.id = "T"+len;
-    
-    document.getElementById("container").appendChild(newTeam);
-    
-    showID = "T"+len;
+    createCookie("viewMode", showID, 1);
 }
 
 function teamNumberChange(){
@@ -115,12 +150,12 @@ function matchNumberChange(){
 }
 
 function selectTeam(){
-    // Add something to check to see if the form being dissapeared is empty (aka to delete it)
+    // Add something to check to see if the form being disappeared is empty (aka to delete it)
     show($("#teamDropdown").val());
 }
 
 function selectMatch(){
-    // Add something to check to see if the form being dissapeared is empty (aka to delete it)
+    // Add something to check to see if the form being disappeared is empty (aka to delete it)
     show($("#matchDropdown").val());
 }
 
@@ -150,11 +185,10 @@ function away(){
 
 function addToUploadStack(id){
     for(var i = 0; i <= uploadStack; i++){
-        ;
         if(uploadStack[i][0] = id){
-	    uploadStack[i] = [id, ""]
-	    return;
-	}
+            uploadStack[i] = [id, ""]
+            return;
+        }
     }
     uploadStack[uploadStack.length] = [id, "?"];
 }
@@ -164,6 +198,7 @@ function clearSelectors(){
     $("#teamDropdown option[value=ID0]").prop("selected", true);
     $("#matchDropdown option[value=ID0]").prop("selected", true);
 }
+
 
 function updatenumberr1(){
     $("#" + showID + " span.match-team-number-r1").html($("#" + showID + " form input[name='match-number-red-1']").val());
@@ -188,3 +223,31 @@ function updatenumberb2(){
 function updatenumberb3(){
     $("#" + showID + " span.match-team-number-b3").html($("#" + showID + " form input[name='match-number-blue-3']").val());
 }
+
+/* Functions for using cookies to save the data */
+function createCookie(name, value, days) {
+    if(days){
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    } else {
+        var expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function eraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
