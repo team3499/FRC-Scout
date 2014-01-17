@@ -7,11 +7,15 @@ PHP receiving (see below)
 
 Have the visual js act on the viewing page.
 
-after creating a team/match, when selecting in the "edit" menu, show edit match/team instead of add.
+after creating a team/match, when selecting in the edit menu, show "edit" match/team instead of "add".
 
 add color coated stuff to make it easier to judge teams and matches quickly
 
-make team page work
+make team and match readonly pages work
+
+edit "shoot" options in "addteam" to be less confusing
+
+get labels working
 
 PHP:
  Three request types:

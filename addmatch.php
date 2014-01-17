@@ -14,43 +14,78 @@
             
             <br/><br/>
             <h4>Autonomous:</h4>
-                <span class="tab1">Red 1 (<span class="match-team-number-r1">js to show team</span>):</span><br/>
+                <span class="tab1">Red 1 (<span class="match-team-number-r1"></span>):</span><br/>
                     <span class="tab2">Score:</span> <!-- match-red-1-score -->
-                        <input class="tab1" type="radio" name="match-red-1-score" value="high-action"/> High w/ Action<br/>
-                        &nbsp;&nbsp;<input class="tab5" type="radio" name="match-red-1-score" value="high"/> High<br/>
-                        &nbsp;&nbsp;<input class="tab5" type="radio" name="match-red-1-score" value="low"/> Low<br/>
-                        &nbsp;&nbsp;<input class="tab5" type="radio" name="match-red-1-score" value="none"/> None
+                    
+                        <input id="match-red-1-score-1" class="tab1" type="radio" name="match-red-1-score" value="high-action"/>
+                            <label for="match-red-1-score-1">High w/ Action</label><br/>
+                            
+                        &nbsp;&nbsp;<input id="match-red-1-score-2" class="tab5" type="radio" name="match-red-1-score" value="high"/>
+                            <label for="match-red-1-score-2">High</label><br/>
+                            
+                        &nbsp;&nbsp;<input id="match-red-1-score-3" class="tab5" type="radio" name="match-red-1-score" value="low"/>
+                            <label for="match-red-1-score-3">Low</label><br/>
+                            
+                        &nbsp;&nbsp;<input id="match-red-1-score-4" class="tab5" type="radio" name="match-red-1-score" value="none"/>
+                            <label for="match-red-1-score-4">None</label>
                 
                 <br/><br/>
                 <span class="tab2">Drive To Zone:</span> <!-- match-red-1-drive -->
-                    <input class="tab1" type="radio" name="match-red-1-drive" value="yes"/> Yes
-                    <input class="tab1" type="radio" name="match-red-1-drive" value="no"/> No
+                
+                    <input id="match-red-1-drive-1" class="tab1" type="radio" name="match-red-1-drive" value="yes"/>
+                        <label for="match-red-1-drive-1">Yes</label>
+                        
+                    <input id="match-red-1-drive-2" class="tab1" type="radio" name="match-red-1-drive" value="no"/>
+                        <label for="match-red-1-drive-2">No</label>
                     
                 <br/><br/>
-                <span class="tab1">Red 2 (<span class="match-team-number-r2">js to show team</span>):</span><br/>
+                <span class="tab1">Red 2 (<span class="match-team-number-r2"></span>):</span><br/>
                     <span class="tab2">Score:</span> <!-- match-red-2-score -->
-                        <input class="tab1" type="radio" name="match-red-2-score" value="high-action"/> High w/ Action<br/>
-                        &nbsp;&nbsp;<input class="tab5" type="radio" name="match-red-2-score" value="high"/> High<br/>
-                        &nbsp;&nbsp;<input class="tab5" type="radio" name="match-red-2-score" value="low"/> Low<br/>
-                        &nbsp;&nbsp;<input class="tab5" type="radio" name="match-red-2-score" value="none"/> None
+                    
+                        <input id="match-red-2-score-1" lass="tab1" type="radio" name="match-red-2-score" value="high-action"/>
+                            <label for="match-red-2-score-1">High w/ Action</label><br/>
+                            
+                        &nbsp;&nbsp;<input id="match-red-2-score-2" class="tab5" type="radio" name="match-red-2-score" value="high"/>
+                            <label for="match-red-2-score-2">High</label><br/>
+                            
+                        &nbsp;&nbsp;<input id="match-red-2-score-3" class="tab5" type="radio" name="match-red-2-score" value="low"/>
+                            <label for="match-red-2-score-3">Low</label><br/>
+                            
+                        &nbsp;&nbsp;<input id="match-red-2-score-4" class="tab5" type="radio" name="match-red-2-score" value="none"/>
+                            <label for="match-red-2-score-4">None</label>
                 
                 <br/><br/>
                 <span class="tab2">Drive To Zone:</span> <!-- match-red-2-drive -->
-                    <input class="tab1" type="radio" name="match-red-2-drive" value="yes"/> Yes
-                    <input class="tab1" type="radio" name="match-red-2-drive" value="no"/> No
+                    <input id="match-red-2-drive-1" class="tab1" type="radio" name="match-red-2-drive" value="yes"/>
+                        <label for="match-red-2-drive-1">Yes</label>
+                        
+                    <input id="match-red-2-drive-2" class="tab1" type="radio" name="match-red-2-drive" value="no"/>
+                        <label for="match-red-2-drive-2">No</label>
                     
                 <br/><br/>
-                <span class="tab1">Red 3 (<span class="match-team-number-r3">js to show team</span>):</span><br/>
+                <span class="tab1">Red 3 (<span class="match-team-number-r3"></span>):</span><br/>
                     <span class="tab2">Score:</span> <!-- match-red-3-score -->
-                        <input class="tab1" type="radio" name="match-red-3-score" value="high-action"/> High w/ Action<br/>
-                        &nbsp;&nbsp;<input class="tab5" type="radio" name="match-red-3-score" value="high"/> High<br/>
-                        &nbsp;&nbsp;<input class="tab5" type="radio" name="match-red-3-score" value="low"/> Low<br/>
-                        &nbsp;&nbsp;<input class="tab5" type="radio" name="match-red-3-score" value="none"/> None
+                    
+                        <input id="match-red-3-score-1" class="tab1" type="radio" name="match-red-3-score" value="high-action"/>
+                            <label for="match-red-3-score-1">High w/ Action</label><br/>
+                            
+                        &nbsp;&nbsp;<input id="match-red-3-score-2" class="tab5" type="radio" name="match-red-3-score" value="high"/>
+                            <label for="match-red-3-score-2">High</label><br/>
+                            
+                        &nbsp;&nbsp;<input id="match-red-3-score-3" class="tab5" type="radio" name="match-red-3-score" value="low"/>
+                            <label for="match-red-3-score-3">Low</label><br/>
+                            
+                        &nbsp;&nbsp;<input id="match-red-3-score-4" class="tab5" type="radio" name="match-red-3-score" value="none"/>
+                            <label for="match-red-3-score-4">None</label>
                 
                 <br/><br/>
                 <span class="tab2">Drive To Zone:</span> <!-- match-red-3-drive -->
-                    <input class="tab1" type="radio" name="match-red-3-drive" value="yes"/> Yes
-                    <input class="tab1" type="radio" name="match-red-3-drive" value="no"/> No
+                
+                    <input id="match-red-3-drive-1" class="tab1" type="radio" name="match-red-3-drive" value="yes"/>
+                        <label for="match-red-3-drive-1">Yes</label>
+                        
+                    <input id="match-red-3-drive-2" class="tab1" type="radio" name="match-red-3-drive" value="no"/>
+                        <label for="match-red-3-drive-2">No</label>
                     
                 <br/><br/>
         </div>
@@ -62,44 +97,79 @@
             
             <br/><br/>
             <h4>Autonomous:</h4>
-                <span class="tab1">Blue 1 (<span class="match-team-number-b1">js to show team</span>):</span><br/>
+                <span class="tab1">Blue 1 (<span class="match-team-number-b1"></span>):</span><br/>
                     <span class="tab2">Score:</span> <!-- match-blue-1-score -->
-                        <input class="tab1" type="radio" name="match-blue-1-score" value="high-action"/> High w/ Action<br/>
-                        &nbsp;&nbsp;<input class="tab5" type="radio" name="match-blue-1-score" value="high"/> High<br/>
-                        &nbsp;&nbsp;<input class="tab5" type="radio" name="match-blue-1-score" value="low"/> Low<br/>
-                        &nbsp;&nbsp;<input class="tab5" type="radio" name="match-blue-1-score" value="none"/> None
+                    
+                        <input id="match-blue-1-score-1" class="tab1" type="radio" name="match-blue-1-score" value="high-action"/>
+                            <label for="match-blue-1-score-1">High w/ Action</label><br/>
+                            
+                        &nbsp;&nbsp;<input id="match-blue-1-score-2" class="tab5" type="radio" name="match-blue-1-score" value="high"/>
+                            <label for="match-blue-1-score-2">High</label><br/>
+                            
+                        &nbsp;&nbsp;<input id="match-blue-1-score-3" class="tab5" type="radio" name="match-blue-1-score" value="low"/>
+                            <label for="match-blue-1-score-3">Low</label><br/>
+                            
+                        &nbsp;&nbsp;<input id="match-blue-1-score-4" class="tab5" type="radio" name="match-blue-1-score" value="none"/>
+                            <label for="match-blue-1-score-4">None</label>
                 
                 <br/><br/>
                 <span class="tab2">Drive To Zone:</span> <!-- match-blue-1-drive -->
-                    <input class="tab1" type="radio" name="match-blue-1-drive" value="yes"/> Yes
-                    <input class="tab1" type="radio" name="match-blue-1-drive" value="no"/> No
+                
+                    <input id="match-blue-1-drive-1" class="tab1" type="radio" name="match-blue-1-drive" value="yes"/>
+                        <label for="match-blue-1-drive-1">Yes</label>
+                        
+                    <input id="match-blue-1-drive-2" class="tab1" type="radio" name="match-blue-1-drive" value="no"/>
+                        <label for="match-blue-1-drive-2">No</label>
                     
                 <br/><br/>
-                <span class="tab1">Blue 2 (<span class="match-team-number-b2">js to show team</span>):</span><br/>
+                <span class="tab1">Blue 2 (<span class="match-team-number-b2"></span>):</span><br/>
                     <span class="tab2">Score:</span> <!-- match-blue-2-score -->
-                        <input class="tab1" type="radio" name="match-blue-2-score" value="high-action"/> High w/ Action<br/>
-                        &nbsp;&nbsp;<input class="tab5" type="radio" name="match-blue-2-score" value="high"/> High<br/>
-                        &nbsp;&nbsp;<input class="tab5" type="radio" name="match-blue-2-score" value="low"/> Low<br/>
-                        &nbsp;&nbsp;<input class="tab5" type="radio" name="match-blue-2-score" value="none"/> None
+                    
+                        <input id="match-blue-2-score-1" lass="tab1" type="radio" name="match-blue-2-score" value="high-action"/>
+                            <label for="match-blue-2-score-1">High w/ Action</label><br/>
+                            
+                        &nbsp;&nbsp;<input id="match-blue-2-score-2" class="tab5" type="radio" name="match-blue-2-score" value="high"/>
+                            <label for="match-blue-2-score-2">High</label><br/>
+                            
+                        &nbsp;&nbsp;<input id="match-blue-2-score-3" class="tab5" type="radio" name="match-blue-2-score" value="low"/>
+                            <label for="match-blue-2-score-3">Low</label><br/>
+                            
+                        &nbsp;&nbsp;<input id="match-blue-2-score-4" class="tab5" type="radio" name="match-blue-2-score" value="none"/>
+                            <label for="match-blue-2-score-4">None</label>
                 
                 <br/><br/>
                 <span class="tab2">Drive To Zone:</span> <!-- match-blue-2-drive -->
-                    <input class="tab1" type="radio" name="match-blue-2-drive" value="yes"/> Yes
-                    <input class="tab1" type="radio" name="match-blue-2-drive" value="no"/> No
+                    <input id="match-blue-2-drive-1" class="tab1" type="radio" name="match-blue-2-drive" value="yes"/>
+                        <label for="match-blue-2-drive-1">Yes</label>
+                        
+                    <input id="match-blue-2-drive-2" class="tab1" type="radio" name="match-blue-2-drive" value="no"/>
+                        <label for="match-blue-2-drive-2">No</label>
                     
                 <br/><br/>
-                <span class="tab1">Blue 3 (<span class="match-team-number-b3">js to show team</span>):</span><br/>
+                <span class="tab1">Blue 3 (<span class="match-team-number-b3"></span>):</span><br/>
                     <span class="tab2">Score:</span> <!-- match-blue-3-score -->
-                        <input class="tab1" type="radio" name="match-blue-3-score" value="high-action"/> High w/ Action<br/>
-                        &nbsp;&nbsp;<input class="tab5" type="radio" name="match-blue-3-score" value="high"/> High<br/>
-                        &nbsp;&nbsp;<input class="tab5" type="radio" name="match-blue-3-score" value="low"/> Low<br/>
-                        &nbsp;&nbsp;<input class="tab5" type="radio" name="match-blue-3-score" value="none"/> None
+                    
+                        <input id="match-blue-3-score-1" class="tab1" type="radio" name="match-blue-3-score" value="high-action"/>
+                            <label for="match-blue-3-score-1">High w/ Action</label><br/>
+                            
+                        &nbsp;&nbsp;<input id="match-blue-3-score-2" class="tab5" type="radio" name="match-blue-3-score" value="high"/>
+                            <label for="match-blue-3-score-2">High</label><br/>
+                            
+                        &nbsp;&nbsp;<input id="match-blue-3-score-3" class="tab5" type="radio" name="match-blue-3-score" value="low"/>
+                            <label for="match-blue-3-score-3">Low</label><br/>
+                            
+                        &nbsp;&nbsp;<input id="match-blue-3-score-4" class="tab5" type="radio" name="match-blue-3-score" value="none"/>
+                            <label for="match-blue-3-score-4">None</label>
                 
                 <br/><br/>
                 <span class="tab2">Drive To Zone:</span> <!-- match-blue-3-drive -->
-                    <input class="tab1" type="radio" name="match-blue-3-drive" value="yes"/> Yes
-                    <input class="tab1" type="radio" name="match-blue-3-drive" value="no"/> No
-        
+                
+                    <input id="match-blue-3-drive-1" class="tab1" type="radio" name="match-blue-3-drive" value="yes"/>
+                        <label for="match-blue-3-drive-1">Yes</label>
+                        
+                    <input id="match-blue-3-drive-2" class="tab1" type="radio" name="match-blue-3-drive" value="no"/>
+                        <label for="match-blue-3-drive-2">No</label>
+                    
         </div>
         
         <br class="clear" />
