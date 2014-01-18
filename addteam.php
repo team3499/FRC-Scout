@@ -1,9 +1,9 @@
-<div id="emptyTeam" class="addTeam"> <!-- Create a team -->
+<div id="editTeam" class="addTeam"> <!-- Create a team -->
     <h2>Add Team</h2><br/>
     
     <form method="get"> <!-- I recommend changing to method="post" when finished-->
     
-        <h4 class="inline">Team Number:</h4> <input class="tab1" type="text" name="team-number" placeholder="Ex: 3499" onchange="teamNumberChange()"/><br/><br/>
+        <h4 class="inline">Team Number:</h4> <input id="team-number" class="tab1" type="text" name="team-number" placeholder="Ex: 3499"/><br/><br/>
         <h4 class="inline">Team Name:</h4> <input class="tab1" type="text" name="team-name" placeholder="Ex: River's Edge"/><br/><br/>
         
         <h4>Drive System:</h4> <!-- team-drive -->

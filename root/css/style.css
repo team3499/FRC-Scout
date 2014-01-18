@@ -193,7 +193,7 @@ div#pageTeam{  /* viewing team page */
     text-align:center;
 }
 
-#emptyTeam, #emptyMatch {
+div#editMatch, div#editTeam  {
     /*display:none;*/ /* creates label bug */
 }
 .clear{

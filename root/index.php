@@ -2,11 +2,14 @@
 <head>
     <title>Team3499 Scout</title>
     <meta charset="UTF-8"/>
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
-    <link rel="shortcut-icon" href="img/shortcut-icon.png" type="image/x-icon"/>
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all"/>
-    <script src="js/jquery-2.0.3.min.js"></script>
-    <script src="js/js.js"></script>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut-icon" href="/img/shortcut-icon.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="all"/>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+    <script src="/js/team.js"></script>
+    <script src="/js/match.js"></script>
+    <script src="/js/event.js"></script>
+    <script src="/js/js.js"></script>
 </head>
 <body>
 
@@ -14,11 +17,11 @@
 
         <div id="header"> <!-- Header -->
         
-            <p class="year" title="Aerial Assault">2014</p> <!-- Change for every year -->
+            <p class="year" title="Aerial Assist">2014</p> <!-- Change for every year -->
             <div class="headerLogo">
                 <span class="title">
                     <span class="titleLeft">Team</span>
-                    <img class="scoutLogo" height="100" src="img/scoutLogo.png"/>
+                    <img class="scoutLogo" height="100" src="/img/scoutLogo.png"/>
                     <span class="titleRight">3499</span>
                 </span>
                 <br class="clear"/>

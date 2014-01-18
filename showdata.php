@@ -1,4 +1,4 @@
-<div id="ID0" class="viewPage">
+<div id="showDataPage" class="viewPage">
 
     <div class="viewTeam">
         <h2>Teams</h2><br/>

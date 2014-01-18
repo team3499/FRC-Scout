@@ -1,16 +1,16 @@
-<div id="emptyMatch" class="addMatch"> <!-- Create a match -->
+<div id="editMatch" class="addMatch"> <!-- Create a match -->
     <h2>Add Match</h2><br/>
     <form method="get">
     
     <span>Match Number: </span>
-        <input onchange="matchNumberChange()" class="tab1" type="text" name="match-number" placeholder="Ex: 5"/><br/>
+        <input id="match-number" class="tab1" type="text" name="match-number" placeholder="Ex: 5"/><br/>
         <br/>
         
         <div class="left">
         
-            Red 1#: <input id="red-team-1" onchange="updatenumberr1();" class="tab1" type="text" name="match-number-red-1" placeholder="Ex: 1123"/><br/>
-            Red 2#: <input id="red-team-2" onchange="updatenumberr2();" class="tab1" type="text" name="match-number-red-2" placeholder="Ex: 2312"/><br/>
-            Red 3#: <input id="red-team-3" onchange="updatenumberr3();" class="tab1" type="text" name="match-number-red-3" placeholder="Ex: 3567"/>
+            Red 1#: <input class="tab1" type="text" name="match-red-team-1" placeholder="Ex: 1123"/><br/>
+            Red 2#: <input class="tab1" type="text" name="match-red-team-2" placeholder="Ex: 2312"/><br/>
+            Red 3#: <input class="tab1" type="text" name="match-red-team-3" placeholder="Ex: 3567"/>
             
             <br/><br/>
             <h4>Autonomous:</h4>
