@@ -1,5 +1,5 @@
-var teams = [];
-var matches = [];
+var teams = []; // stores all local team data
+var matches = []; // stores all local match data
 
 var uploadStack = [];
 
@@ -43,16 +43,28 @@ $(document).ready(function(){
     });
     
     $('#teamDropdown').change(function(){
-        selectTeam();
+        selectTeam($(this).val());
     });
     $('#matchDropdown').change(function(){
-        selectMatch();
+        selectMatch($(this).val());
     });
     
-    $('.viewMatchBox').click(function(obj){
-        obj.attr('team');
+    $('.viewMatchBox').click(function(){
+        console.log($(this).attr('match'));
+        selectTeam($(this).attr('match'));
+    });
+    $('.viewTeamBox').click(function(){
+        console.log($(this).attr('team'));
+        selectMatch($(this).attr('team'));
     });
 });
+
+function listData(){
+    for(var i = 0; i < teams.length; ++i){
+        var entry = document.createElement("span");
+        entry.team = 
+    }
+}
 
 function show(id){
     document.getElementById(showID).style.display = "none";
@@ -149,17 +161,17 @@ function matchNumberChange(){
     $("#matchDropdown option[value=" + showID + "]").prop("selected", true);
 }
 
-function selectTeam(){
+function selectTeam(val){
     // Add something to check to see if the form being disappeared is empty (aka to delete it)
-    show($("#teamDropdown").val());
+    show(val);
 }
 
-function selectMatch(){
+function selectMatch(val){
     // Add something to check to see if the form being disappeared is empty (aka to delete it)
-    show($("#matchDropdown").val());
+    show(val);
 }
 
-function dissapear(){
+function disappear(){
   active.style.display = "none";
 }
 

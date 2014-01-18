@@ -8,9 +8,9 @@
         
         <div class="left">
         
-            Red 1#: <input onchange="updatenumberr1();" class="tab1" type="text" name="match-number-red-1" placeholder="Ex: 1123"/><br/>
-            Red 2#: <input onchange="updatenumberr2();" class="tab1" type="text" name="match-number-red-2" placeholder="Ex: 2312"/><br/>
-            Red 3#: <input onchange="updatenumberr3();" class="tab1" type="text" name="match-number-red-3" placeholder="Ex: 3567"/>
+            Red 1#: <input id="red-team-1" onchange="updatenumberr1();" class="tab1" type="text" name="match-number-red-1" placeholder="Ex: 1123"/><br/>
+            Red 2#: <input id="red-team-2" onchange="updatenumberr2();" class="tab1" type="text" name="match-number-red-2" placeholder="Ex: 2312"/><br/>
+            Red 3#: <input id="red-team-3" onchange="updatenumberr3();" class="tab1" type="text" name="match-number-red-3" placeholder="Ex: 3567"/>
             
             <br/><br/>
             <h4>Autonomous:</h4>
