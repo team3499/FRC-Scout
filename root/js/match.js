@@ -31,12 +31,13 @@ function editMatch(name, value){
             $("#teamDropdown option[value=ID0]").prop("selected", true);
             $("#matchDropdown option[value=" + match + "]").prop("selected", true);
         }
-    }
-    if(name != "match-number" && match == ""){
-        alert("Please enter a match number first, data cannot be saved until this is done!");
-        return false;
     } else {
-        matches[match][name] = value;
-        return true;
+        if(match == ""){
+            alert("Please enter a match number first, data cannot be saved until this is done!");
+            return false;
+        } else {
+            matches[match][name] = value;
+            return true;
+        }
     }
 }
