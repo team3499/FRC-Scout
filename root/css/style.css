@@ -41,7 +41,7 @@ body {
 }
 .year{
     float:right;
-    transform: rotate(90deg); /* Doesnt work in chrome */
+    transform: rotate(90deg); /* Doesn't work in chrome */
     -webkit-transform: rotate(90deg);
     color:#ccc;
     font-size:50px;
@@ -90,11 +90,11 @@ body {
 .viewPage{ /* Home */
     text-align:center;
 }
-.viewTeam{ /* Team view from home */
+#viewTeamWrap{ /* Team view from home */
     float:left;
     width:350px;
 }
-.viewMatch{ /* Match view from home */
+#viewMatchWrap{ /* Match view from home */
     float:right;
     width:350px;
 }

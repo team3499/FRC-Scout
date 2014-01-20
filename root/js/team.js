@@ -6,13 +6,28 @@ function loadTeamForm(team){
     } else if(teams[team] == undefined){
         // try to get from server
         alert("no such team");
-    } else {
-    
     }
+    $("#teamDropdown option[value=" + team + "]").prop("selected", true);
+    $("#matchDropdown option[value=0]").prop("selected", true);
     if(prevteam == undefined){
         prevteam = $('#team-number').val();
     }
+    selectTeamDropdown(team);
     $(views[1]).show();
+}
+
+function populateTeamDropdown(){
+    $('#teamDropdown').html("");
+    $('#teamDropdown').append('<option value="0">Edit Team...</option>');
+    for(var i = 0; i < teams.length; ++i){
+        $('#teamDropdown').append('<option value="' + teams[i].number + '">Team ' + teams[i].number + '</option>');
+    }
+}
+function selectTeamDropdown(team){
+    for(var i = 0; i < teams.length; ++i){
+        $('#teamDropdown option').prop("selected", false);
+    }
+    $("#teamDropdown option[value=" + team + "]").prop("selected", true);
 }
 
 // Change a named value in the edit team view
@@ -24,11 +39,13 @@ function editTeam(name, value){
             alert("You cannot leave a team number empty.");
             return false;
         } else {
-            clearSelectors();
+            
+            populateTeamDropdown();
+            selectTeamDropdown(team);
             if(!$("#teamDropdown").find("option[value='" + team + "']").length){
                 $("#teamDropdown").append("<option value=\"" + team + "\">Team " + team + "</option>");
             }
-            $("#matchDropdown option[value=ID0]").prop("selected", true);
+            $("#matchDropdown option[value=0]").prop("selected", true);
             $("#teamDropdown option[value=" + team + "]").prop("selected", true);
             return true;
         }

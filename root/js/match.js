@@ -6,13 +6,28 @@ function loadMatchForm(match){
     } else if(matches[match] == undefined){
         // try to get from server
         alert("no such match");
-    } else {
-    
     }
+    $("#teamDropdown option[value=0]").prop("selected", true);
+    $("#matchDropdown option[value=" + match + "]").prop("selected", true);
     if(prevmatch == undefined){
         prevmatch = $('#match-number').val();
     }
+    selectMatchDropdown(match);
     $(views[2]).show();
+}
+
+function populateMatchDropdown(){
+    $('#matchDropdown').html("");
+    $('#matchDropdown').append('<option value="0">Edit Match...</option>');
+    for(var i = 0; i < matches.length; ++i){
+        $('#matchDropdown').append('<option value="' + matches[i].number + '">Match' + matches[i].number + '</option>');
+    }
+}
+function selectMatchDropdown(match){
+    for(var i = 0; i < teams.length; ++i){
+        $('#matchDropdown option').prop("selected", false);
+    }
+    $("#matchDropdown option[value=" + match + "]").prop("selected", true);
 }
 
 // Change a named value in the edit match view
@@ -28,7 +43,7 @@ function editMatch(name, value){
             if(!$("#matchDropdown").find("option[value='" + match + "']").length){
                 $("#matchDropdown").append("<option value=\"" + match + "\">Match " + match + "</option>");
             }
-            $("#teamDropdown option[value=ID0]").prop("selected", true);
+            $("#teamDropdown option[value=0]").prop("selected", true);
             $("#matchDropdown option[value=" + match + "]").prop("selected", true);
         }
     } else {

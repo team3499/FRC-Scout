@@ -1,29 +1,29 @@
 var teams = []; // stores all local team data
 var matches = []; // stores all local match data
 
-var prevteam = "";
-var prevmatch = "";
+var prevteam = 0;
+var prevmatch = 0;
+
+var currteam = 0;
+var currmatch = 0;
 
 var uploadStack = [];
 
 var views = ["#showDataPage", "#editTeam", "#editMatch"];
 
+var hook = true;
+
 $(document).ready(function(){
+    window.onbeforeunload = windowClose;
+    
     $(document).resize(function(){
     
     });
     $(document).resize();
     bindEvents();
     
-    show(views[0]);
+    loadDataList();
 });
-
-function listData(){
-    for(var i = 0; i < teams.length; ++i){
-        var entry = document.createElement("span");
-        entry.team = teams[i].number;
-    }
-}
 
 function hideAll(){
     for(var i = 0; i < views.length; ++i){
@@ -31,18 +31,50 @@ function hideAll(){
     }
 }
 function show(id){
-    if(id == views[1]){
+    if(id == views[0]){
+        hideAll();
+        $(id).show();
+    } else if(id == views[1]){
         loadTeamForm(0);
     } else if(id == views[2]){
         loadMatchForm(0);
     } else {
-        hideAll();
-        $(id).show();
+
     }
 }
 
-function windowclose(){
-  
+function loadDataList(){
+    hideAll();
+    $('#viewTeam').html("");
+    if(teams.length == 0)
+        $('#viewTeam').append('<span class="viewTeamBox" team="0">Add Team</span>');
+    for(var i = 0; i < teams.length; ++i){
+        $('#viewTeam').append('<span class="viewTeamBox" team="'+teams[i].number+'">Team '+teams[i].number+'</span>');
+    }
+    $('#viewMatch').html("");
+    if(matches.length == 0)
+        $('#viewMatch').append('<span class="viewMatchBox" match="0">Add Match</span>');
+    for(var i = 0; i < matches.length; ++i){
+        $('#viewMatch').append('<span class="viewMatchBox" match="'+matches[i].number+'">Match '+matches[i].number+'</span>');
+    }
+    populateTeamDropdown();
+    populateMatchDropdown();
+    bindEvents(); // rebind events
+    show(views[0]);
+}
+
+function windowClose(){
+    if(hook){
+        console.log("window closing");
+        // Push data to server
+        // OR
+        // Uncomment to notify user
+        //alert("You have data that has not been sent to the server. Are you sure you want to leave?");
+        //return "You have data that has not been sent to the server. Are you sure you want to leave?"
+    }
+}
+function unHookWindowClose(){ // call this when you want a link leaving the page to NOT warn the user
+    hook = false;
 }
 
 function disappear(){
@@ -80,33 +112,8 @@ function addToUploadStack(id){
 
 function clearSelectors(){
     // Clear the selectors
-    $("#teamDropdown option[value=ID0]").prop("selected", true);
-    $("#matchDropdown option[value=ID0]").prop("selected", true);
-}
-
-
-function updatenumberr1(){
-    $("#" + showID + " span.match-team-number-r1").html($("#" + showID + " form input[name='match-number-red-1']").val());
-}
-
-function updatenumberr2(){
-    $("#" + showID + " span.match-team-number-r2").html($("#" + showID + " form input[name='match-number-red-2']").val());
-}
-
-function updatenumberr3(){
-    $("#" + showID + " span.match-team-number-r3").html($("#" + showID + " form input[name='match-number-red-3']").val());
-}
-
-function updatenumberb1(){
-    $("#" + showID + " span.match-team-number-b1").html($("#" + showID + " form input[name='match-number-blue-1']").val());
-}
-
-function updatenumberb2(){
-    $("#" + showID + " span.match-team-number-b2").html($("#" + showID + " form input[name='match-number-blue-2']").val());
-}
-
-function updatenumberb3(){
-    $("#" + showID + " span.match-team-number-b3").html($("#" + showID + " form input[name='match-number-blue-3']").val());
+    $("#teamDropdown option[value=0]").prop("selected", true);
+    $("#matchDropdown option[value=0]").prop("selected", true);
 }
 
 /* Functions for using cookies to save the data */
@@ -135,4 +142,3 @@ function readCookie(name) {
 function eraseCookie(name) {
     createCookie(name,"",-1);
 }
-

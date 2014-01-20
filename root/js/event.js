@@ -1,7 +1,7 @@
 function bindEvents(){
     // Navigation
     $('#showDataButton').click(function(){
-        show(views[0]);
+        loadDataList();
     });
     $('#addTeamButton').click(function(){
         loadTeamForm(0);
@@ -10,19 +10,19 @@ function bindEvents(){
         loadMatchForm(0);
     });
     
-    $('#teamDropdown').change(function(){
-        loadTeamForm($(this).val());
+    $('#teamDropdown').change(function(event){
+        loadTeamForm(event.target.value);
     });
-    $('#matchDropdown').change(function(){
-        loadMatchForm($(this).val());
+    $('#matchDropdown').change(function(event){
+        loadMatchForm(event.target.value);
     });
     
     $('.viewTeamBox').click(function(){
-        console.log($(this).attr('team'));
+        //console.log($(this).attr('team'));
         loadTeamForm($(this).attr('team'));
     });
     $('.viewMatchBox').click(function(){
-        console.log($(this).attr('match'));
+        //console.log($(this).attr('match'));
         loadMatchForm($(this).attr('match'));
     });
     
