@@ -25,7 +25,23 @@ body {
     background-repeat: no-repeat; /* Fixes gradient */
     background-attachment: fixed; /* Fixes gradient */
 }
-#wrap { /* Contains everything */
+a{
+    color:#0091C1;
+}
+a:hover{
+
+}
+table{
+    margin-bottom:20px;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-spacing:0;
+    font-size:14px;
+}
+table td{
+    border: 1px solid rgba(0,0,0,0.3);
+    padding:0 10px;
+}
+#wrap{ /* Contains everything */
     min-height: 100%;
     opacity: .99; /* Fixed Z-Index - Funny I know */
 }
@@ -90,13 +106,11 @@ body {
 .viewPage{ /* Home */
     text-align:center;
 }
-#viewTeamWrap{ /* Team view from home */
-    float:left;
-    width:350px;
+#viewTeamWrap{ /* Team view from Show Data */
+
 }
-#viewMatchWrap{ /* Match view from home */
-    float:right;
-    width:350px;
+#viewMatchWrap{ /* Match view from Show Data */
+
 }
 span.viewTeamBox, span.viewMatchBox{ /* The boxes containing the matches and teams */
     background: #f8f8f8;
@@ -127,6 +141,47 @@ span.viewTeamBox::-moz-selection, span.viewMatchBox::-moz-selection {
 .viewMatchBox{
     margin-right:10px;
 }
+.tableTeams{
+
+}
+.tableTeams tr, .tableTeams td{
+
+}
+.tableTeamsTeam{
+
+}
+.tableTeamsCatch{
+}
+.tableTeamsPickup{
+}
+.tableTeamsThrow{
+}
+.tableTeamsAuto{
+}
+.tableTeamsNotes{
+}
+.tableTeamsTotalPoints{
+
+}
+.tableMatchesMatch{
+
+}
+.tableMatchesBlueTeam{
+
+}
+.tableMatchesRedTeam{
+
+}
+.tableMatchesBlueScore{
+
+}
+.tableMatchesRedScore{
+
+}
+.tableMatchesWinner{
+
+}
+
 
 div#pageMatch{ /* viewing match page */
     display:none;
@@ -137,7 +192,7 @@ div#pageTeam{  /* viewing team page */
 
 .info{ /* More containment */
     /*border:3px solid #D6D6D6;*/
-    padding:10px 10px 10px;
+    padding:10px 0 10px;
     margin-top:5px;
     /*display:inline;*/
     width:800px;
@@ -229,15 +284,32 @@ span.title {
 .inline{
     display:inline;
 }
-.good{
+.green{
     color:#1AD60C;
 }
-.okay{
+.yellow{
     color:#C4B20F;
 }
-.bad{
+.red{
     color:#D10C0C;
 }
+.blue{
+    color:#0213FF;
+}
+.greenBG{
+    background-color:#1AD60C;
+}
+.yellowBG{
+    background-color:#DDC911;
+}
+.redBG{
+    background-color:#D10C0C;
+    color:#fff;
+}
+.blueBG{
+    background-color:#0213FF;
+    color:#fff;
+}
 h1, h2, h3, h4, h5, h6 {
-
+    margin-bottom:15px;
 }

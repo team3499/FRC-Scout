@@ -51,10 +51,6 @@
                 <?php include("../pagematch.php") ?>
                 
             </div>
-                <!-- Test colors -->
-                <p class="good">Good</p>
-                <p class="okay">Okay</p>
-                <p class="bad">Bad</p>
         </div>
     </div>
 
