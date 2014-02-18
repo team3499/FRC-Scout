@@ -43,12 +43,56 @@
         <div id="main"> <!-- Put everything here / wrapper -->
         
             <div id="container" class="info"> <!-- Shows team and match info and additions -->
+                <script>
+    
+                $.fn.serializeObject = function() {
+                    
+                    var o = {};
+                    var serial = this.serializeArray();
+                    
+                    $.each(serial, function() {
+                        
+                        if (o[this.name] !== undefined) {
+                            
+                            if (!o[this.name].push){
+                                o[this.name] = [o[this.name]];
+                            }
+                            o[this.name] = (this.value || '');
+                            
+                        } else {
+                            
+                            o[this.name] = this.value || '';
+                        }
+                    });
+                    
+                    return o;
+                };
                 
+                $(function() {
+                    
+                    $('form#addTeam').submit(function(){
+                        $('#resultTeam').text(JSON.stringify($('form#addTeam').serializeObject()));
+                        return false;
+                    });
+                    $('form#addMatch').submit(function(){
+                        $('#resultMatch').text(JSON.stringify($('form#addMatch').serializeObject()));
+                        return false;
+                    });
+                });
+                
+            </script>
+            
+                <?php include("../connect.php") ?>
                 <?php include("../showdata.php") ?>
                 <?php include("../addteam.php") ?>
                 <?php include("../addmatch.php") ?>
                 <?php include("../pageteam.php") ?>
                 <?php include("../pagematch.php") ?>
+                
+                <pre id="resultTeam"> <!-- Debug -->
+                </pre>
+                <pre id="resultMatch"> <!-- Debug -->
+                </pre>
                 
             </div>
         </div>

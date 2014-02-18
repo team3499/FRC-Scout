@@ -14,7 +14,7 @@
                 <td class="tableTeamsTotalPoints"><strong>Total Points</strong></td>
             </tr>
             <tr>
-                <td class="tableTeamsTeam" title="Team Number"><a href="#0001"><strong>0001</strong></a></td>
+                <td class="tableTeamsTeam" title="Team Number"><a href="team.php?team=3499"><strong>0001</strong></a></td>
                 <td class="tableTeamsCatch greenBG" title="Catch?">Yes</td>
                 <td class="tableTeamsPickup yellowBG" title="Pickup?">Maybe <span title="The team said that they could pickup during the interview, but in game, they do not!">(?)</span></td>
                 <td class="tableTeamsThrow greenBG" title="Throw?">Yes</td>
@@ -31,7 +31,7 @@
         
         <table id="tableMatches">
             <tr>
-               <td class="tableMatchesMatch"><strong>Match Number</strong></td>
+               <td class="tableMatchesMatch"><strong>Match #</strong></td>
                <td class="tableMatchesBlueTeam blueBG"><strong>B Team #1</strong></td>
                <td class="tableMatchesBlueTeam blueBG"><strong>B Team #2</strong></td>
                <td class="tableMatchesBlueTeam blueBG"><strong>B Team #3</strong></td>
@@ -53,7 +53,7 @@
                <td class="tableMatchesRedTeam red" title="Red Team #3"><a href="#0006">0006</a></td>
                <td class="tableMatchesBlueScore blue" title="Blue Team Score">3213</td>
                <td class="tableMatchesRedScore red" title="Red Team Score">3646</td>
-               <td class="tableMatchesNotes yellowBG" title="Match Ntoes"><span title="blah blah blah blah blah blah blah blah There is a lot of notes to test this field">blah blah blah blah blah blah blah blah There is a lot of notes to test this field</span></td>
+               <td class="tableMatchesNotes yellowBG" title="Match Ntoes"><span title="There is a lot of notes to test this field">There is a lot of notes to test this field</span></td>
                <td class="tableMatchesWin blueBG" title="Team Winner">Blue</td>
             </tr>
         

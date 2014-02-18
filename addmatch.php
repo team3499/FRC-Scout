@@ -1,9 +1,9 @@
 <div id="editMatch" class="addMatch"> <!-- Create a match -->
     <h2>Add Match</h2><br/>
-    <form method="get">
+    <form method="get" id="addMatch">
     
     <span>Match Number: </span>
-        <input id="match-number" class="tab1" type="text" name="match-number" placeholder="Ex: 5"/><br/>
+        <input required id="match-number" class="tab1" type="text" name="match-number" placeholder="Ex: 5"/><br/>
         <br/>
         
         <div class="left">

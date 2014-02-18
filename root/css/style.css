@@ -35,11 +35,14 @@ table{
     margin-bottom:20px;
     border: 1px solid rgba(0,0,0,0.3);
     border-spacing:0;
-    font-size:14px;
+    font-size:13px;
 }
 table td{
     border: 1px solid rgba(0,0,0,0.3);
     padding:0 10px;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom:15px;
 }
 #wrap{ /* Contains everything */
     min-height: 100%;
@@ -141,48 +144,6 @@ span.viewTeamBox::-moz-selection, span.viewMatchBox::-moz-selection {
 .viewMatchBox{
     margin-right:10px;
 }
-.tableTeams{
-
-}
-.tableTeams tr, .tableTeams td{
-
-}
-.tableTeamsTeam{
-
-}
-.tableTeamsCatch{
-}
-.tableTeamsPickup{
-}
-.tableTeamsThrow{
-}
-.tableTeamsAuto{
-}
-.tableTeamsNotes{
-}
-.tableTeamsTotalPoints{
-
-}
-.tableMatchesMatch{
-
-}
-.tableMatchesBlueTeam{
-
-}
-.tableMatchesRedTeam{
-
-}
-.tableMatchesBlueScore{
-
-}
-.tableMatchesRedScore{
-
-}
-.tableMatchesWinner{
-
-}
-
-
 div#pageMatch{ /* viewing match page */
     display:none;
 }
@@ -309,7 +270,4 @@ span.title {
 .blueBG{
     background-color:#0213FF;
     color:#fff;
-}
-h1, h2, h3, h4, h5, h6 {
-    margin-bottom:15px;
 }
