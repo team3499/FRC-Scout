@@ -32,7 +32,7 @@ function selectTeamDropdown(team){
 
 // Change a named value in the edit team view
 function editTeam(name, value){
-    var team = $('#team-number').val();
+    var team = $('#teamNumber').val();
     console.log(team + ' ' + name + ' ' + value);
     if(name == "team-number"){
         if(value == ""){
