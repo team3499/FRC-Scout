@@ -1,16 +1,16 @@
 <div id="editMatch" class="addMatch"> <!-- Create a match -->
     <h2>Add Match</h2><br/>
-    <form method="get" id="addMatch">
+    <form method="post" id="addMatch">
     
     <span>Match Number: </span>
-        <input required id="match-number" class="tab1" type="text" name="match-number" placeholder="Ex: 5"/><br/>
+        <input required autofocus id="match-number" class="tab1" type="text" name="match-number" placeholder="Ex: 5"/><br/>
         <br/>
         
         <div class="left">
         
-            Red 1#: <input class="tab1" type="text" name="match-red-team-1" placeholder="Ex: 1123"/><br/>
-            Red 2#: <input class="tab1" type="text" name="match-red-team-2" placeholder="Ex: 2312"/><br/>
-            Red 3#: <input class="tab1" type="text" name="match-red-team-3" placeholder="Ex: 3567"/>
+            Red 1#: <input class="tab1" type="number" name="match-red-team-1" placeholder="Ex: 1123"/><br/>
+            Red 2#: <input class="tab1" type="number" name="match-red-team-2" placeholder="Ex: 2312"/><br/>
+            Red 3#: <input class="tab1" type="number" name="match-red-team-3" placeholder="Ex: 3567"/>
             
             <br/><br/>
             <h4>Autonomous:</h4>
@@ -91,9 +91,9 @@
         </div>
         <div class="rightSide">
         
-            Blue 1#: <input onchange="updatenumberb1();" class="tab1" type="text" name="match-number-blue-1" placeholder="Ex: 1124"/><br/>
-            Blue 2#: <input onchange="updatenumberb2();" class="tab1" type="text" name="match-number-blue-2" placeholder="Ex: 2313"/><br/>
-            Blue 3#: <input onchange="updatenumberb3();" class="tab1" type="text" name="match-number-blue-3" placeholder="Ex: 3568"/>
+            Blue 1#: <input onchange="updatenumberb1();" class="tab1" type="number" name="match-number-blue-1" placeholder="Ex: 1124"/><br/>
+            Blue 2#: <input onchange="updatenumberb2();" class="tab1" type="number" name="match-number-blue-2" placeholder="Ex: 2313"/><br/>
+            Blue 3#: <input onchange="updatenumberb3();" class="tab1" type="number" name="match-number-blue-3" placeholder="Ex: 3568"/>
             
             <br/><br/>
             <h4>Autonomous:</h4>

@@ -44,6 +44,9 @@ table td{
 h1, h2, h3, h4, h5, h6 {
     margin-bottom:15px;
 }
+.none{
+    display:none;
+}
 #wrap{ /* Contains everything */
     min-height: 100%;
     opacity: .99; /* Fixed Z-Index - Funny I know */
@@ -149,6 +152,30 @@ div#pageMatch{ /* viewing match page */
 }
 div#pageTeam{  /* viewing team page */
     display:none;
+}
+div#teamPopup{
+    display:none;
+    border:1px solid rgba(0,0,0,0.4);
+    border-radius:10px;
+    text-align:center;
+    width:400px;
+    padding:30px 50px 60px 50px;
+    margin:0 auto;
+    z-index: 999;
+    top:50%;
+    left:50%;
+    position:fixed;
+    float:left;
+    background:#FFFFFF;
+}
+.mask {
+    display: none;
+    background: rgba(0,0,0,0.7);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .info{ /* More containment */
@@ -258,13 +285,13 @@ span.title {
     color:#0213FF;
 }
 .greenBG{
-    background-color:#1AD60C;
+    background-color:#11D116;
 }
 .yellowBG{
     background-color:#DDC911;
 }
 .redBG{
-    background-color:#D10C0C;
+    background-color:#ED1515;
     color:#fff;
 }
 .blueBG{

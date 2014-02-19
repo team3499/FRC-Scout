@@ -4,7 +4,8 @@ function bindEvents(){
         loadDataList();
     });
     $('#addTeamButton').click(function(){
-        loadTeamForm(0);
+        loadTeamPopup();
+        //loadTeamForm(0); // Executes after submitting the number
     });
     $('#addMatchButton').click(function(){
         loadMatchForm(0);

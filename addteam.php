@@ -1,70 +1,10 @@
-<?php
-
-if (isset($_GET['team_number'])) {
-    /*$team_number = $_GET['team_number'];
-    $team_name = $_GET['team_name'];
-    $team_drive = $_GET['team_drive'];
-    $team_catch = $_GET['team_catch'];
-    $team_pickup = $_GET['team_pickup'];
-    $team_pickup_ease = $_GET['team_pickup_ease'];
-    $team_throw = $_GET['team_throw'];
-    $team_push = $_GET['team_push'];
-    $team_autonomous = $_GET['team_autonomous'];
-    $team_autonomous_shoot = $_GET['team_autonomous_shoot'];
-    $team_autonomous_zone = $_GET['team_autonomous_zone'];
-    $team_autonomous_start = $_GET['team_autonomous_start'];
-    $team_catch = $_GET['team_notes'];*/
-    
-    // ADD Decode JSON into a PHP array
-    
-    if (empty($teamNumber)) {
-        $error = 'Team number is required';
-    } else {
-        $query = $pdo->prepare('INSERT INTO teams (
-                                team_number, 
-                                team_name, 
-                                team_drive, 
-                                team_catch,
-                                team_pickup,
-                                team_pickup_ease,
-                                team_throw,
-                                team_push,
-                                team_autonomous,
-                                team_autonomous_shoot,
-                                team_autonomous_zone,
-                                team_autonomous_start,
-                                team_notes
-                                ) VALUES (
-                                ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
-                                );
-        
-        $query->bindValue(1, $team_number);
-        $query->bindValue(2, $team_name);
-        $query->bindValue(3, $team_drive);
-        $query->bindValue(4, $team_catch);
-        $query->bindValue(5, $team_pickup);
-        $query->bindValue(6, $team_pickup_ease);
-        $query->bindValue(7, $team_throw);
-        $query->bindValue(8, $team_push);
-        $query->bindValue(9, $team_autonomous);
-        $query->bindValue(10, $team_autonomous_shoot);
-        $query->bindValue(11, $team_autonomous_zone);
-        $query->bindValue(12, $team_autonomous_start);
-        $query->bindValue(13, $team_notes);
-        
-        $query->execute();
-        
-    }
-}
-
-?>
-
 <div id="editTeam" class="addTeam"> <!-- Create a team -->
+    
     <h2>Add Team</h2><br/>
     
-    <form method="get" id="addTeam"> <!-- I recommend changing to method="post" when finished-->
+    <div id="addTeam">
     
-        <h4 class="inline">Team Number:</h4> <input required id="team-number" class="tab1" type="text" name="team-number" placeholder="Ex: 3499"/><br/><br/>
+        <!--<h4 class="inline">Team Number:</h4> <input required autofocus id="team-number" class="tab1" type="text" name="team-number" placeholder="Ex: 3499"/><br/><br/>-->
         <h4 class="inline">Team Name:</h4> <input class="tab1" type="text" name="team-name" placeholder="Ex: River's Edge"/><br/><br/>
         
         <h4>Drive System:</h4> <!-- team-drive -->
@@ -102,7 +42,7 @@ if (isset($_GET['team_number'])) {
                 <label for="team-catch-2">No</label><br/>
                 
             <span class="tab1">Reliably:</span>
-                <input class="tab1" style="width:50px;" type="text" name="percentR" maxlength="3" placeholder="Ex: 50"/>%
+                <input class="tab1" style="width:50px;" type="number" name="team-catch-percent" maxlength="3" placeholder="Ex: 50"/>%
         
         <br/><br/>
         <h4>Pick Up:</h4> <!-- team-pickup -->
@@ -144,7 +84,7 @@ if (isset($_GET['team_number'])) {
                 <label for="team-throw-2">No</label><br/>
             
             <span class="tab1">Shot Accuracy:</span>
-                <input class="tab1" style="width:50px;" type="text" name="percentT" maxlength="3" placeholder="Ex: 50"/>%
+                <input class="tab1" style="width:50px;" type="number" name="team-throw-percent" maxlength="3" placeholder="Ex: 50"/>%
             
         <br/><br/>
         <h4>Push The Ball:</h4> <!-- team-push -->
@@ -167,13 +107,13 @@ if (isset($_GET['team_number'])) {
                     <label for="team-autonomous-shoot-1">Low</label><br/>
                     
                     &nbsp;&nbsp;&nbsp;<span class="tab5">Shot Accuracy:</span>
-                        <input class="tab1" style="width:50px;" type="text" name="percent-SA" maxlength="3" placeholder="Ex: 50"/>%<br/>
+                        <input class="tab1" style="width:50px;" type="number" name="team-autonomous-shoot-percent" maxlength="3" placeholder="Ex: 50"/>%<br/>
                         
                 &nbsp;&nbsp;<input id="team-autonomous-shoot-2" class="tab4" type="checkbox" name="team-autonomous-shoot" value="average"/>
                     <label for="team-autonomous-shoot-2">High</label><br/>
                     
                     &nbsp;&nbsp;&nbsp;<span class="tab5">Shot Accuracy:</span>
-                        <input class="tab1" style="width:50px;" type="text" name="percent-SA" maxlength="3" placeholder="Ex: 50"/>%<br/>
+                        <input class="tab1" style="width:50px;" type="number" name="team-autonomous-shoot-percent" maxlength="3" placeholder="Ex: 50"/>%<br/>
                 
                 &nbsp;&nbsp;&nbsp;<span class="tab5">Wait For Action Time:</span>
                     <input id="team-autonomous-AT-1" class="tab1" type="radio" name="team-autonomous-AT" value="yesAT"/>  
@@ -208,5 +148,5 @@ if (isset($_GET['team_number'])) {
         <input class="right" type="submit" value="Submit Team Info" name="submit-team"/>
         
         <br class="clear" />
-    </form>
+    </div>
 </div>

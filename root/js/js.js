@@ -13,6 +13,12 @@ var views = ["#showDataPage", "#editTeam", "#editMatch"];
 
 var hook = true;
 
+
+/* A bug is in this where *every* element from the functions is created TWICE, only way around is to refresh the page (which our goal ISNT to do), please fix. 
+ * 
+ * */
+
+
 $(document).ready(function(){
     window.onbeforeunload = windowClose;
     
@@ -23,6 +29,7 @@ $(document).ready(function(){
     bindEvents();
     
     loadDataList();
+    
 });
 
 function hideAll(){
@@ -141,4 +148,125 @@ function readCookie(name) {
 
 function eraseCookie(name) {
     createCookie(name,"",-1);
+}
+
+$.fn.serializeObject = function() {
+    
+    var o = {};
+    var serial = this.serializeArray();
+    
+    $.each(serial, function() {
+        
+        if (o[this.name] !== undefined) {
+            
+            if (!o[this.name].push){
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name] = (this.value || '');
+            
+        } else {
+            
+            o[this.name] = this.value || '';
+        }
+    });
+    
+    return o;
+};
+
+$(function() {
+    
+    $('div#addTeam input[type=submit]').click(function(){
+        //$('#resultTeam').text(JSON.stringify($('form#addTeam').serializeObject()));
+        //var team_json = JSON.stringify($('div#addTeam').serializeObject());
+        var team_json = JSON.stringify(teams);
+        $('#resultTeam').text(team_json);
+        
+        $.ajax ({
+            type: "POST",
+            url:"savedata.php",
+            data: team_json,
+            success: function() {
+                console.log("OK sent team_json somewhere");
+            }
+        });
+        
+        return false;
+    });
+    $('form#addMatch').submit(function(){
+        //$('#resultMatch').text(JSON.stringify($('form#addMatch').serializeObject()));
+        var match_json = JSON.stringify($('form#addMatch').serializeObject());
+        $('#resultMatch').text(match_json);
+        return false;
+    });
+});
+
+// Starts the popup when clicking "Add Team"
+function loadTeamPopup(){
+    // Adds mask to page
+    $('body').append('<div class="mask"></div>');
+    $('.mask').fadeIn(200);
+    
+    // Adds Popup to page
+    $('body').append("\
+        <div id=\"teamPopup\"><h2>Add Team</h2>\
+        Please input a team number.<br/>\
+        <input required autofocus id=\"teamNumber\" type=\"number\" name=\"team-number\" placeholder=\"Ex: 3499\"/>\
+        <br/><br/>\
+        <span class=\"button\" id=\"submitTeamNumber\">Submit Team Number</span>\
+        <span class=\"button\" id=\"submitTeamCancel\">Cancel</span>\
+    </div>\
+    ");
+    
+    // Centers the Popup
+    $("#teamPopup").css({ 
+        'margin-top': -($("#teamPopup").height()+130)/2,
+        'margin-left': -($("#teamPopup").width()+90)/2
+    });
+    
+    $("#teamPopup").fadeIn(200);
+    
+    $('#submitTeamNumber').click(function(){
+        closeTeamPopupOK();
+    });
+    $('#submitTeamCancel, .mask').click(function(){
+        closeTeamPopup();
+    });
+    
+    $("#teamNumber").one('focus', function(event){
+        console.log("changing value..?");
+        prevteam = event.target.value;
+    }).change(function(event){
+        console.log("PREVTEAM " + prevteam);
+        if(!editTeam(event.target.name, event.target.value)){
+            console.log("prevteam reset " + prevteam);
+            event.target.value = prevteam;
+        }
+        prevteam = event.target.value;
+    });
+}
+
+// Starts when user submits a team number
+function closeTeamPopupOK(){
+    if($('#teamNumber').val() == ""){
+        alert("Please enter a team number first!");
+        return false;
+    }
+    
+    $("#teamPopup").fadeOut(200, function(){
+        $(this).remove(0);
+    });
+    $('.mask').fadeOut(200, function(){
+        $(this).remove(0);
+    });
+    loadTeamForm(0);
+}
+
+// Starts when the user wants to close the popup
+function closeTeamPopup(){
+    $("#teamPopup").fadeOut(200, function(){
+        $(this).remove(0);
+    });
+    $('.mask').fadeOut(200, function(){
+        $(this).remove(0);
+    });
 }
