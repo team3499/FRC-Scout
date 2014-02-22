@@ -3,3 +3,8 @@ root/data/
 
 # The Database
 scout.db
+
+# Temp files
+*~
+*.swp
+*.swo
