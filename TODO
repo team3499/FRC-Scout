@@ -7,9 +7,6 @@ PHP receiving (see below)
 
 Have the visual js act on the viewing page.
 
-add color coated (or coded, whatever you prefer... ethan) stuff to make it easier to judge teams and matches quickly
-	Get the tables working FIRST, then apply styles. (Having the styles is a novelty, we don't need it.)
-
 make team and match readonly pages work
 
 edit "shoot" options in "addteam" to be less confusing
