@@ -33,12 +33,12 @@ a:hover{
 }
 table{
     margin-bottom:20px;
-    border: 1px solid rgba(0,0,0,0.3);
+    border: 1px solid #b1b1b1; /* rgba(0, 0, 0, 1); */
     border-spacing:0;
     font-size:13px;
 }
 table td{
-    border: 1px solid rgba(0,0,0,0.3);
+    border: 1px solid #888888; /* rgba(0, 0, 0, 1); */
     padding:0 10px;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -285,16 +285,22 @@ span.title {
     color:#0213FF;
 }
 .greenBG{
-    background-color:#11D116;
+    background: rgb(255,255,255);
+    box-shadow: inset 0px 0px 4px 2px #66aa66;
 }
 .yellowBG{
-    background-color:#DDC911;
+    background: rgb(255,255,255);
+    box-shadow: inset 0px 0px 4px 2px #cccc55;
 }
 .redBG{
-    background-color:#ED1515;
-    color:#fff;
+    background: rgb(255,255,255);
+    box-shadow: inset 0px 0px 4px 2px #aa6666;
 }
 .blueBG{
-    background-color:#0213FF;
-    color:#fff;
+    background: rgb(255,255,255);
+    box-shadow: inset 0px 0px 4px 2px #6666aa;
+}
+.blackBG{
+    background: rgb(255,255,255);
+    box-shadow: inset 0px 0px 8px 0px #bbbbbb;
 }

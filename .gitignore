@@ -3,3 +3,6 @@ root/data/
 
 # The Database
 scout.db
+
+#Vim tmp files
+*.swp
