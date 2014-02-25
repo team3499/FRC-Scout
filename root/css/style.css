@@ -36,6 +36,7 @@ table{
     border: 1px solid rgba(0,0,0,0.3);
     border-spacing:0;
     font-size:13px;
+    border-collapse:collapse;
 }
 table td, table th{
     border: 1px solid rgba(0,0,0,0.3);
