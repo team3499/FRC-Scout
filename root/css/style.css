@@ -33,13 +33,13 @@ a:hover{
 }
 table{
     margin-bottom:20px;
-    border: 1px solid rgba(0,0,0,0.3);
+    border: 1px solid #ddd;
     border-spacing:0;
     font-size:13px;
     border-collapse:collapse;
 }
 table td, table th{
-    border: 1px solid rgba(0,0,0,0.3);
+    border: 1px solid #ddd;
     padding:0 10px;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -285,26 +285,24 @@ span.title {
 .blue{
     color:#0213FF;
 }*/
-/*.greenBG{
-    background-color:#11D116;
+.greenBG{
+    background-color:#DFF0D7;
 }
 .yellowBG{
-    background-color:#DDC911;
+    background-color:#FCF8E2;
 }
 .redBG{
-    background-color:#ED1515;
-    color:#fff;
+    background-color:#F2DEDF;
 }
 .blueBG{
-    background-color:#0213FF;
-    color:#fff;
-}*/
+    background-color:#D9EDF6;
+}
 tr:nth-child(odd){
-    background:#eee;
+    background:#F9F9F8 ;
 }
 tr:nth-child(even){
 
 }
 th{
-    background:#D6D6D6;
+
 }
