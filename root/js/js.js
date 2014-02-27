@@ -160,25 +160,24 @@ function isValidTeamNumber(){
         // we dont actually do anything here...
         return true;
     } else {
-        alert("YOU NEED TO ENTER A ****NUMBER****\nGood Job.");
+        alert("YOU NEED TO ENTER AN ****INTEGER****\nGood Job.");
         return false;
     }
 }
 
 // Starts when user submits a team number
 function closeTeamPopupOK(){
-    if($('#teamNumber').val() == ""){
-        alert("Please enter a team number first!");
-        return false;
+    if(isValidTeamNumber()){
+
+        $("#teamPopup").fadeOut(200, function(){
+            $(this).remove(0);
+        });
+        $('.mask').fadeOut(200, function(){
+            $(this).remove(0);
+        });
+        loadTeamForm(0);
+
     }
-    
-    $("#teamPopup").fadeOut(200, function(){
-        $(this).remove(0);
-    });
-    $('.mask').fadeOut(200, function(){
-        $(this).remove(0);
-    });
-    loadTeamForm(0);
 }
 
 // Starts when the user wants to close the popup
