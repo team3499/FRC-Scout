@@ -5,14 +5,13 @@
  * 
  */
 
-$db="scout"; 
 $table_team="teams";
 $table_match="matches";
 
 // Checks to see if the database exists
-if (!file_exists('../'.$db.'.db')){
+if (!file_exists('../scout.db')){
     
-    fwrite($db.'.db','');
+    fwrite('../scout.db','');
 }
 
 try {
@@ -62,7 +61,7 @@ try {
     
 
 } catch (PDOException $e) {
-    echo '<p style="color:red;">Database error, check if using correct settings in "connect.php" and using correct permissions! </p><br/>';
+    echo '<p style="color:red;">Database error, check if using correct settings in "create.php" and using correct permissions! </p><br/>';
     echo $e->getMessage();
 }
 

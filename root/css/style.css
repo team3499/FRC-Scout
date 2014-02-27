@@ -32,7 +32,7 @@ a:hover{
 
 }
 table{
-    margin-bottom:20px;
+    margin:0 auto 20px;
     border: 1px solid #ddd;
     border-spacing:0;
     font-size:13px;
@@ -236,12 +236,33 @@ div#teamPopup{
 .footerText{
     text-align:center;
 }
-
+#debug{
+    border:1px solid #B2B2B2;
+    padding:10px;
+    background:#F9F9F8;
+    width:500px;
+    border-radius:8px;
+    margin:0 auto
+}
 div#editMatch, div#editTeam  {
     /*display:none;*/ /* creates label bug */
 }
 .clear{
     clear:both;
+}
+.longText{
+    height:20px;
+    overflow:hidden;
+    cursor:pointer;
+    text-overflow:ellipsis;
+    white-space:nowrap; 
+    padding:10px;
+}
+.longTextTeam{
+    width:350px;
+}
+.longTextMatch{
+    width:150px;
 }
 span.title {
     text-decoration:none;
@@ -273,8 +294,8 @@ span.title {
 .inline{
     display:inline;
 }
-/*.green{
-    color:#1AD60C;
+.green{
+    color:#1C8E02;
 }
 .yellow{
     color:#C4B20F;
@@ -284,7 +305,7 @@ span.title {
 }
 .blue{
     color:#0213FF;
-}*/
+}
 .greenBG{
     background-color:#DFF0D7;
 }

@@ -53,7 +53,7 @@
         <span>Match 2</span><br/>
         <span>Match 3</span><br/>
         
-        <!-- Add a "None" option -->
+        <!-- Add a "None" option (if (not in any match) {echo 'None'})-->
     
     </div>
     

@@ -10,6 +10,8 @@
     <script src="/js/match.js"></script>
     <script src="/js/event.js"></script>
     <script src="/js/js.js"></script>
+    <script src="/js/jquery.dotdotdot.min.js"></script>
+
 </head>
 <body>
 
@@ -43,20 +45,33 @@
         <div id="main"> <!-- Put everything here / wrapper -->
         
             <div id="container" class="info"> <!-- Shows team and match info and additions -->
-                
+               
             
-                <?php // include("../create.php") ?>
+                <?php  include("../create.php") ?>
                 <?php include("../showdata.php") ?>
                 <?php include("../addteam.php") ?>
                 <?php include("../addmatch.php") ?>
                 <?php include("../pageteam.php") ?>
                 <?php include("../pagematch.php") ?>
                 
+                                
+            </div>
+
+            <div id="debug">
+
+                <?php
+                if (file_exists("../scout.db")){
+                    echo '<p class="green">Database exists<p>';
+                } else {
+                    echo '<p class="red">Database does not exist, run ../create.php</p>';
+                }
+                ?> 
+                
                 <div id="resultTeam"> <!-- Debug -->
                 </div>
                 <div id="resultMatch"> <!-- Debug -->
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -76,6 +91,8 @@
         </div>
     
     </div>
+
+    <script src="/js/afterjs.js"></script>
 
 </body>
 </html>

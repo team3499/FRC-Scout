@@ -270,3 +270,4 @@ function closeTeamPopup(){
         $(this).remove(0);
     });
 }
+
