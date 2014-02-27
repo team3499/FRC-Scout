@@ -15,6 +15,9 @@ var views = ["#showDataPage", "#editTeam", "#editMatch"];
 /* This is NOT a local copy, it is removed on push, and added on a pull */
 /* This is to prevent duplicates */
 
+////////////////////////////
+/* Page Control Functions */
+////////////////////////////
 $(document).ready(function(){
   // UNCOMMENT BEFORE RELEASE!
 //    window.onbeforeunload = windowClose;
@@ -29,27 +32,20 @@ $(document).ready(function(){
 function bindEvents(){
     // Navigation
     $('#showDataButton').click(function(){
-        loadDataList();
+        showButtonClick();
     });
     $('#addTeamButton').click(function(){
-        loadTeamPopup();
+        addTeamButtonClick();
     });
     $('#addMatchButton').click(function(){
-        loadMatchForm(0);
+        addMatchButtonClick();
     });
     
     $('#teamDropdown').change(function(event){
-        loadTeamForm(event.target.value);
+        teamDropdownChange(event.target.value);
     });
     $('#matchDropdown').change(function(event){
-        loadMatchForm(event.target.value);
-    });
-    
-    $('.viewTeamBox').click(function(){
-        loadTeamForm($(this).attr('team'));
-    });
-    $('.viewMatchBox').click(function(){
-        loadMatchForm($(this).attr('match'));
+        matchDropdownChange(event.target.value);
     });
     
     // Team Editing
@@ -64,17 +60,6 @@ function bindEvents(){
         prevteam = event.target.value;
     });
     
-    // Match Editing
-    $("#editMatch").find('input, textarea').one('focus', function(event){
-        prevmatch = event.target.value;
-    }).change(function(event){
-        console.log("PREVMATCH " + prevmatch);
-        if(!editMatch(event.target.name, event.target.value)){
-            console.log("prevmatch reset " + prevmatch);
-            event.target.value = prevmatch;
-        }
-        prevmatch = event.target.value;
-    });
     $('div#addTeam input[type=submit]').click(function(){
         var team_json = JSON.stringify(teams);
         $('#resultTeam').text(team_json);
@@ -95,9 +80,18 @@ function bindEvents(){
         $('#resultMatch').text(match_json);
         return false;
     });
-    
+   
 }
 
+function windowClose(){
+    return ""; // This prevents the user from leaving the page without a conformation dialogue
+}
+
+function clearSelectors(){
+    // Clear the selectors
+    $("#teamDropdown option[value=0]").prop("selected", true);
+    $("#matchDropdown option[value=0]").prop("selected", true);
+}
 
 function hideAll(){
     for(var i = 0; i < views.length; ++i){
@@ -117,41 +111,15 @@ function show(id){
     }
 }
 
-function windowClose(){
-    return ""; // This prevents the user from leaving the page without a conformation dialogue
-}
-
-function clearSelectors(){
-    // Clear the selectors
-    $("#teamDropdown option[value=0]").prop("selected", true);
-    $("#matchDropdown option[value=0]").prop("selected", true);
-}
-
-$.fn.serializeObject = function() {
-    
-    var o = {};
-    var serial = this.serializeArray();
-    
-    $.each(serial, function() {
-        
-        if (o[this.name] !== undefined) {
-            
-            if (!o[this.name].push){
-                o[this.name] = [o[this.name]];
-            }
-            o[this.name] = (this.value || '');
-            
-        } else {
-            
-            o[this.name] = this.value || '';
-        }
-    });
-    
-    return o;
-};
-
 // Starts the popup when clicking "Add Team"
-function loadTeamPopup(){
+function addTeamButtonClick(){
+    createTeamNumberInputPopup();
+    $("input#teamNumber").change(function(){
+        isValidTeamNumber();
+    });
+}
+
+function createTeamNumberInputPopup(){
     // Adds mask to page
     $('body').append('<div class="mask"></div>');
     $('.mask').fadeIn(200);
@@ -167,7 +135,8 @@ function loadTeamPopup(){
     </div>\
     ");
     
-    // Centers the Popup
+    
+// Centers the Popup
     $("#teamPopup").css({ 
         'margin-top': -($("#teamPopup").height()+130)/2,
         'margin-left': -($("#teamPopup").width()+90)/2
@@ -182,17 +151,18 @@ function loadTeamPopup(){
         closeTeamPopup();
     });
     
-    $("#teamNumber").one('focus', function(event){
-        console.log("changing value..?");
-        prevteam = event.target.value;
-    }).change(function(event){
-        console.log("PREVTEAM " + prevteam);
-        if(!editTeam(event.target.name, event.target.value)){
-            console.log("prevteam reset " + prevteam);
-            event.target.value = prevteam;
-        }
-        prevteam = event.target.value;
-    });
+}
+
+// This is called when the number input for creating a new team is changed (loses focus)
+// It validates it then closes the popup.
+function isValidTeamNumber(){
+    if(isFinite($("input#teamNumber").val()) && (Math.floor($("input#teamNumber").val()) == $("input#teamNumber").val())){
+        // we dont actually do anything here...
+        return true;
+    } else {
+        alert("YOU NEED TO ENTER A ****NUMBER****\nGood Job.");
+        return false;
+    }
 }
 
 // Starts when user submits a team number
@@ -220,3 +190,58 @@ function closeTeamPopup(){
         $(this).remove(0);
     });
 }
+
+// Loads the requested thingy onto the page:
+// It creates it if it doesnt exist already
+function loadTeamForm(teamID){
+    hideAll();
+// var views = ["#showDataPage", "#editTeam", "#editMatch"];
+
+    $("#editTeam").html("");
+
+    if(teams[teamID] !== undefined && teams[teamID][0] !== undefined){
+        ; // We use this one!
+    } else {
+        ; // Create a new team element
+    }
+
+// Fill the new div with stuff
+
+    $("#editTeam").append("");
+    $("#editTeam").append("");
+    $("#editTeam").append("");
+    $("#editTeam").append("");
+    $("#editTeam").append("");
+    $("#editTeam").append("");
+    $("#editTeam").append("");
+    $("#editTeam").append("");
+    
+    show(1);
+}
+
+
+////////////////////////
+/* Misc Lib Functions */
+////////////////////////
+$.fn.serializeObject = function() {
+    
+    var o = {};
+    var serial = this.serializeArray();
+    
+    $.each(serial, function() {
+        
+        if (o[this.name] !== undefined) {
+            
+            if (!o[this.name].push){
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name] = (this.value || '');
+            
+        } else {
+            
+            o[this.name] = this.value || '';
+        }
+    });
+    
+    return o;
+};
