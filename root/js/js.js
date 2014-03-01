@@ -1,5 +1,9 @@
+/* These are mapped via the team numbers */
 var teams = []; // stores all local team data
 var matches = []; // stores all local match data
+/* This is just a list of all the team and match numbers, so we dont have to go looking for them later. */
+var teamNums = [];
+var matchNums = [];
 
 var editing = []; // The current team or match we are editing
 var editingWhat; // What we are editing... "match", "team", "", or "nothing"
@@ -8,6 +12,8 @@ var teamUploadStack  = []; // This should contain the team numbers that need to 
 var matchUploadStack = []; // ^
 
 var views = ["#showDataPage", "#editTeam", "#editMatch"];
+
+var lastPullTimestamp;
 
 /* All locally created data will reside in the 0 index. */
 /* All fetched data will reside in index equal to or greater than 1 */
@@ -136,7 +142,7 @@ function createTeamNumberInputPopup(){
     ");
     
     
-// Centers the Popup
+    // Centers the Popup
     $("#teamPopup").css({ 
         'margin-top': -($("#teamPopup").height()+130)/2,
         'margin-left': -($("#teamPopup").width()+90)/2
@@ -149,6 +155,10 @@ function createTeamNumberInputPopup(){
     });
     $('#submitTeamCancel, .mask').click(function(){
         closeTeamPopup();
+    });
+
+    $("#force-push-and-fetch-attempt").click(function(){
+        connectionTick();
     });
     
 }
@@ -165,22 +175,7 @@ function isValidTeamNumber(){
     }
 }
 
-// Starts when user submits a team number
-function closeTeamPopupOK(){
-    if(isValidTeamNumber()){
-
-        $("#teamPopup").fadeOut(200, function(){
-            $(this).remove(0);
-        });
-        $('.mask').fadeOut(200, function(){
-            $(this).remove(0);
-        });
-        loadTeamForm(0);
-
-    }
-}
-
-// Starts when the user wants to close the popup
+// This closes the popup
 function closeTeamPopup(){
     $("#teamPopup").fadeOut(200, function(){
         $(this).remove(0);
@@ -190,19 +185,40 @@ function closeTeamPopup(){
     });
 }
 
+// Starts when user submits a team number
+function closeTeamPopupOK(){
+    if(isValidTeamNumber()){
+
+        /* Close the popup */
+        closeTeamPopup();
+ 
+        /* Call the function to load the form */
+        teamPopupClosed();
+
+    }
+}
+
 // Loads the requested thingy onto the page:
 // It creates it if it doesnt exist already
-function loadTeamForm(teamID){
+function teamPopupClosed(){
     hideAll();
-// var views = ["#showDataPage", "#editTeam", "#editMatch"];
+    // var views = ["#showDataPage", "#editTeam", "#editMatch"];
+
+    var newTeamID = $("input#teamNumber").val();
 
     $("#editTeam").html("");
 
-    if(teams[teamID] !== undefined && teams[teamID][0] !== undefined){
+    // newTeamID should always be valid *unless* someone is doing something behind-the-scenes
+    // Check to see if there are local edits for a team of this value
+    if(teams[newTeamID] !== undefined && teams[newTeamID][0] !== undefined){
         ; // We use this one!
     } else {
         ; // Create a new team element
     }
+
+    // *Add* this team to the upload queue
+    // It is easiest to do this here as oppesed to making a new element and passing this one to the background.
+    putTeamInUploadQueue(newTeamID);
 
 // Fill the new div with stuff
 
@@ -235,8 +251,8 @@ $.fn.serializeObject = function() {
                 o[this.name] = [o[this.name]];
             }
             o[this.name] = (this.value || '');
-            
-        } else {
+
+            } else {
             
             o[this.name] = this.value || '';
         }
@@ -244,3 +260,69 @@ $.fn.serializeObject = function() {
     
     return o;
 };
+
+
+////////////////////////////
+/* Upload queue functions */
+////////////////////////////
+
+
+// This is called periodically.
+// It assesses the connection to the server, then trys to send and get data.
+function connectionTick(){
+    $.ajax ({
+        type: "POST",
+        url:"ping.php",
+        success: function() {
+            console.log("Ping to server is OK");
+            uploadTeamData();
+            uploadMatchData();
+        },
+        error: function() {
+            console.log("Failed to Connect to server :(");
+        }
+    });
+}
+
+function packToJSON(teamID){
+    ;
+    ;
+}
+
+function putTeamInUploadQueue(teamID){
+    if(teamUploadStack.indexOf(teamID) == -1)
+        teamUploadStack.push(teamID);
+}
+
+function uploadTeamData(){
+
+}
+
+function uploadMatchData(){
+
+}
+
+function pullData(){
+    $.ajax({
+        type: "POST",
+        url:  "givedata.php",
+        //data: toJSON(lastPullTimestamp),
+        success: function(){
+            parseReturnData(data);
+        }
+    });
+}
+
+function parseReturnData(data){
+/*    var retdata = JSONtoobj(data);
+    if(retdata[timelastmod] <= lastpulltimestamp){ // if the modifcation timestamp is not older than the last time we pulled, dont change.
+        ;
+    } else {
+        rmAndReplaceNonLocalData(retdata);
+    }
+
+    lastpulltimestamp = redtata[timelastmod]; */
+}
+
+function rmAndReplaceNonLocalData(newdata){
+}
