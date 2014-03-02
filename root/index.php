@@ -60,11 +60,13 @@
             <div id="debug">
 
                 <?php
-                if (file_exists("../scout.db")){
-                    echo '<p class="green">Database exists<p>';
-                } else {
-                    echo '<p class="red">Database does not exist, run ../create.php</p>';
-                }
+                    if (file_exists("../scout.db")){
+                        echo '<p class="green">Database exists<p>';
+                     } else {
+                        echo '<p class="red">Database does not exist, run ../create.php</p>';
+                     }
+                     echo $databaseError;
+                     echo $databaseMessage;
                 ?> 
                 
                 <div id="resultTeam"> <!-- Debug -->
@@ -73,6 +75,13 @@
                 </div>
 
             </div>
+            <!--<script> We will add this before release
+                $('#debug').hide();
+                onKonamiCode.requireEnterKey = false; // True/false
+                onKonamiCode(function(){
+                     $('#debug').show();
+                 });
+            </script>-->
         </div>
     </div>
 

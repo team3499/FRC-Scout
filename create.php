@@ -1,7 +1,7 @@
 <?php
 
 /* !!! Make sure scout.db is owned by the apache user and possibly have 777 permissions. !!!
- * 
+ * The document root itself has to be owned by the apache user before creating the database. 
  * 
  */
 
@@ -37,7 +37,7 @@ try {
                  team_autonomous_start VARCHAR(10) NOT NULL,
                  team_notes VARCHAR(500) NOT NULL);");
                  
-    // This is gathered form the addmatch page.
+    // This is gathered from the addmatch page.
     $pdo->exec("create table if not exists $table_match(
                  ID INTEGER PRIMARY KEY AUTOINCREMENT,
                  match_red_team_1 VARCHAR(10) NOT NULL, 
@@ -59,10 +59,14 @@ try {
                  match_blue_3_score VARCHAR(10) NOT NULL,
                  match_blue_3_drive VARCHAR(10) NOT NULL);");
     
+    // This is gathered when users enters their name when they intially load the page
+    $pdo->exec("create table if not exists $table_name(
+                 ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                 your_name VARCHAR(55) NOT NULL;");
 
 } catch (PDOException $e) {
-    echo '<p style="color:red;">Database error, check if using correct settings in "create.php" and using correct permissions! </p><br/>';
-    echo $e->getMessage();
+    $databaseError = '<p class="red">Database error, check if using correct settings in "create.php" and using correct permissions! </p>';
+    $databaseMessage = '<p class="red">'.$e->getMessage().'</p>';
 }
 
 ?>

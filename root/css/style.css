@@ -40,7 +40,8 @@ table{
 }
 table td, table th{
     border: 1px solid #ddd;
-    padding:0 10px;
+    padding:5px 10px;
+    vertical-align:top;
 }
 h1, h2, h3, h4, h5, h6 {
     margin-bottom:15px;
@@ -154,7 +155,7 @@ div#pageMatch{ /* viewing match page */
 div#pageTeam{  /* viewing team page */
     display:none;
 }
-div#teamPopup{
+div#popup{
     display:none;
     border:1px solid rgba(0,0,0,0.4);
     border-radius:10px;
@@ -168,6 +169,11 @@ div#teamPopup{
     position:fixed;
     float:left;
     background:#FFFFFF;
+}
+.nametag{
+    background:#E32223 !important;
+    color:#fff;
+    padding: 5px 0 20px !important;
 }
 .mask {
     display: none;
@@ -256,7 +262,6 @@ div#editMatch, div#editTeam  {
     cursor:pointer;
     text-overflow:ellipsis;
     white-space:nowrap; 
-    padding:10px;
 }
 .longTextTeam{
     width:350px;

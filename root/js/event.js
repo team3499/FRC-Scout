@@ -1,4 +1,6 @@
 function bindEvents(){
+    //namePopup();
+    
     // Navigation
     $('#showDataButton').click(function(){
         loadDataList();
