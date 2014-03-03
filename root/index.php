@@ -6,9 +6,6 @@
     <link rel="shortcut-icon" href="/img/shortcut-icon.png" type="image/x-icon"/>
     <link rel="stylesheet" href="/css/style.css" type="text/css" media="all"/>
     <script src="/js/jquery-2.0.3.min.js"></script>
-    <script src="/js/team.js"></script>
-    <script src="/js/match.js"></script>
-    <script src="/js/event.js"></script>
     <script src="/js/js.js"></script>
 </head>
 <body>

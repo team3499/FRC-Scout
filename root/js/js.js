@@ -54,18 +54,6 @@ function bindEvents(){
         matchDropdownChange(event.target.value);
     });
     
-    // Team Editing
-    $("#editTeam").children().one('focus', function(event){
-        prevteam = event.target.value;
-    }).change(function(event){
-        console.log("PREVTEAM " + prevteam);
-        if(!editTeam(event.target.name, event.target.value)){
-            console.log("prevteam reset " + prevteam);
-            event.target.value = prevteam;
-        }
-        prevteam = event.target.value;
-    });
-    
     $('div#addTeam input[type=submit]').click(function(){
         var team_json = JSON.stringify(teams);
         $('#resultTeam').text(team_json);
@@ -105,16 +93,19 @@ function hideAll(){
     }
 }
 
+// This should be passed the actual ID not the index: ie. show(views[1])
 function show(id){
-    if(id == views[0]){
-        hideAll();
-        $(id).show();
-    } else if(id == views[1]){
-        loadTeamForm(0);
-    } else if(id == views[2]){
-        loadMatchForm(0);
-    } else {
-    }
+    hideAll();
+    $(id).show();
+    // if(id == views[0]){
+        // hideAll();
+        // $(id).show();
+    // } else if(id == views[1]){
+        // loadTeamForm(0);
+    // } else if(id == views[2]){
+        // loadMatchForm(0);
+    // } else {
+    // }
 }
 
 // Starts the popup when clicking "Add Team"
@@ -201,13 +192,18 @@ function closeTeamPopupOK(){
 // Loads the requested thingy onto the page:
 // It creates it if it doesnt exist already
 function teamPopupClosed(){
+    alert("1");
     hideAll();
+    alert("2");
+    window.console.out("1");
     // var views = ["#showDataPage", "#editTeam", "#editMatch"];
 
+    alert("3");
     var newTeamID = $("input#teamNumber").val();
 
-    $("#editTeam").html("");
+    // $("#editTeam").html("");
 
+    window.console.out("2");
     // newTeamID should always be valid *unless* someone is doing something behind-the-scenes
     // Check to see if there are local edits for a team of this value
     if(teams[newTeamID] !== undefined && teams[newTeamID][0] !== undefined){
@@ -216,22 +212,40 @@ function teamPopupClosed(){
         ; // Create a new team element
     }
 
+    window.console.out("3");
+
     // *Add* this team to the upload queue
     // It is easiest to do this here as oppesed to making a new element and passing this one to the background.
     putTeamInUploadQueue(newTeamID);
 
-// Fill the new div with stuff
+    // $("div#editTeam :input").not(':button, :submit, :reset, :hidden').val('').removeAttr('checked').removeAttr('selected');
+    // $("div#editTeam :input").each(function(this){
+        // console.log("Value is: " + this.val());
+        // this.not(':button, :submit, :reset, :hidden').val('').removeAttr('checked').removeAttr('selected');
+        // console.log("Value is: " + this.val());
+        // console.log("");
+    // });
 
-    $("#editTeam").append("");
-    $("#editTeam").append("");
-    $("#editTeam").append("");
-    $("#editTeam").append("");
-    $("#editTeam").append("");
-    $("#editTeam").append("");
-    $("#editTeam").append("");
-    $("#editTeam").append("");
-    
-    show(1);
+    window.console.out("STUFF!");
+    window.console.out(JSON.stringify($("div#editTeam :input"), null, 4));
+
+    // jQuery.each($("div#editTeam :input"), function(this){
+        // console.log("Value is: " + this.val());
+        // this.not(':button, :submit, :reset, :hidden').val('').removeAttr('checked').removeAttr('selected');
+        // console.log("Value is: " + this.val());
+        // console.log("");
+    // });
+
+    // $("#editTeam").append("");
+    // $("#editTeam").append("");
+    // $("#editTeam").append("");
+    // $("#editTeam").append("");
+    // $("#editTeam").append("");
+    // $("#editTeam").append("");
+    // $("#editTeam").append("");
+    // $("#editTeam").append("");
+    // 
+    show(views[1]);
 }
 
 

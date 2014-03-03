@@ -1,9 +1,9 @@
-ScoutingData
-============
+#ScoutingData
+```
 
 Data collection for scouting at FRC events.
 
----
+```
 
 This is currently not in a usable stage. Once we hit Alpha, it will be ready for testing.
 
@@ -13,8 +13,8 @@ IE is not, and will not be properly supported.
 
 
 To 'Install':
- -  Install webserver with php (we recommend XAMPP)
- -  Clone or pull or somehow aquire the sources and stuff.
+ -  Install webserver with php (we recommend XAMPP) (you also need to have PDO enabled in the php.ini file)
+ -  Somehow aquire the sources and stuff.
  -  Set the 'root' folder from the repository as the document root.
  -  Make sure the php creating directories and files('teams', 'matches', and 'showdata.php') is owned by the web server user! (typically www-data or httpd if using apache on \*nix systems)
 
