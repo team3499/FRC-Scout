@@ -38,6 +38,10 @@ $(document).ready(function(){
 
 // This function binds Events to Button Clicks
 function bindEvents(){
+    // UNCOMMENT BEFORE RELEASE
+    // namePopup();
+
+
     // Navigation
     $('#showDataButton').click(function(){
         showButtonClick();
@@ -113,29 +117,29 @@ function createTeamNumberInputPopup(){
     
     // Adds Popup to page
     $('body').append("\
-        <div id=\"teamPopup\"><h2>Add Team</h2>\
+        <div id=\"popup\"><h2>Add Team</h2>\
         Please input a team number.<br/>\
         <input required autofocus id=\"teamNumber\" type=\"number\" maxlength=\"4\" name=\"team-number\" placeholder=\"Ex: 3499\"/>\
         <br/><br/>\
-        <span class=\"button\" id=\"submitTeamNumber\">Submit Team Number</span>\
+        <span class=\"button\" id=\"submitTeamNumber\">Submit</span>\
         <span class=\"button\" id=\"submitTeamCancel\">Cancel</span>\
     </div>\
     ");
     
     
     // Centers the Popup
-    $("#teamPopup").css({ 
-        'margin-top': -($("#teamPopup").height()+130)/2,
-        'margin-left': -($("#teamPopup").width()+90)/2
+    $("#popup").css({ 
+        'margin-top': -($("#popup").height()+130)/2,
+        'margin-left': -($("#popup").width()+90)/2
     });
     
-    $("#teamPopup").fadeIn(200);
+    $("#popup").fadeIn(200);
     
     $('#submitTeamNumber').click(function(){
         closeTeamPopupOK();
     });
     $('#submitTeamCancel, .mask').click(function(){
-        closeTeamPopup();
+        closePopup();
     });
 }
 
@@ -153,7 +157,7 @@ function isValidTeamNumber(){
 
 // This closes the popup
 function closeTeamPopup(){
-    $("#teamPopup").fadeOut(200, function(){
+    $("#popup").fadeOut(200, function(){
         $(this).remove(0);
     });
     $('.mask').fadeOut(200, function(){
@@ -257,6 +261,13 @@ function serializeTeamForm(){
                 console.log(element.nodeName);
             }
         }
+}
+
+
+// Starts when the user wants to close the popup
+function closePopup(){
+    $("#popup").fadeOut(200, function(){
+        $(this).remove(0);
     });
 }
 
@@ -348,4 +359,64 @@ function parseReturnData(data){
 }
 
 function rmAndReplaceNonLocalData(newdata){
+}
+
+// Starts on startup to ask for the users name, this can be disabled in event.js
+function namePopup(){
+// Adds mask to page
+    $('body').append('<div class="mask"></div>');
+    $('.mask').fadeIn(200);
+    
+    // Adds Popup to page
+    $('body').append("\
+        <div class=\"nametag\" id=\"popup\"><span style=\"font-size:40px;font-weight:bold;\">H E L L O</span><br/>\
+        <strong>my name is</strong><br/>\
+        <textarea required autofocus cols=\"16\" rows=\"2\" id=\"yourName\" name=\"your-name\" style=\"border:none;font-size:40px;\" placeholder=\"Forrest Gump\"/>\
+        <br/><br/>\
+        <span class=\"button\" id=\"submitName\">Submit</span>\
+    </div>\
+    ");
+    
+    // Centers the Popup
+    $("#popup").css({ 
+        'margin-top': -($("#popup").height()+130)/2,
+        'margin-left': -($("#popup").width()+20)/2
+    });
+    
+    $("#popup").fadeIn(200);
+    
+    $('#submitName').click(function(){
+        closeNamePopupOK();
+    });
+
+}
+
+// When the user agrees to putting in their name
+function closeNamePopupOK(){
+    //magic
+}
+
+function onKonamiCode(fn) { // Taken from http://james.padolsey.com/javascript/konami-craziness/
+    var codes = (function(){
+        var c = [38,38,40,40,37,39,37,39,66,65];
+        onKonamiCode.requireEnterKey && c.push(13);
+        return c;
+    })(),
+        expecting = function(){
+            expecting.codes = expecting.codes || Array.apply({}, codes);
+            expecting.reset = function() { expecting.codes = null; };
+            return expecting.codes;
+        },
+        handler = function(e) {
+            if (expecting()[0] == (e||window.event).keyCode) {
+                expecting().shift();
+                if (!expecting().length) {
+                    expecting.reset();
+                    fn();
+                }
+            } else { expecting.reset(); }
+        };
+    window.addEventListener ?
+        window.addEventListener('keydown', handler, false)
+        : document.attachEvent('onkeydown', handler);
 }

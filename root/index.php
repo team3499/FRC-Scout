@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css" media="all"/>
     <script src="/js/jquery-2.0.3.min.js"></script>
     <script src="/js/js.js"></script>
+    <script src="/js/jquery.dotdotdot.min.js"></script>
+
 </head>
 <body>
 
@@ -40,21 +42,43 @@
         <div id="main"> <!-- Put everything here / wrapper -->
         
             <div id="container" class="info"> <!-- Shows team and match info and additions -->
-                
+               
             
-                <?php // include("../create.php") ?>
+                <?php  include("../create.php") ?>
                 <?php include("../showdata.php") ?>
                 <?php include("../addteam.php") ?>
                 <?php include("../addmatch.php") ?>
                 <?php include("../pageteam.php") ?>
                 <?php include("../pagematch.php") ?>
                 
+                                
+            </div>
+
+            <div id="debug">
+
+                <?php
+                    if (file_exists("../scout.db")){
+                        echo '<p class="green">Database exists<p>';
+                     } else {
+                        echo '<p class="red">Database does not exist, run ../create.php</p>';
+                     }
+                     echo $databaseError;
+                     echo $databaseMessage;
+                ?> 
+                
                 <div id="resultTeam"> <!-- Debug -->
                 </div>
                 <div id="resultMatch"> <!-- Debug -->
                 </div>
-                
+
             </div>
+            <!--<script> We will add this before release
+                $('#debug').hide();
+                onKonamiCode.requireEnterKey = false; // True/false
+                onKonamiCode(function(){
+                     $('#debug').show();
+                 });
+            </script>-->
         </div>
     </div>
 
@@ -73,6 +97,8 @@
         </div>
     
     </div>
+
+    <script src="/js/afterjs.js"></script>
 
 </body>
 </html>

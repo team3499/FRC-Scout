@@ -32,15 +32,16 @@ a:hover{
 
 }
 table{
-    margin-bottom:20px;
-    border: 1px solid rgba(0,0,0,0.3);
+    margin:0 auto 20px;
+    border: 1px solid #ddd;
     border-spacing:0;
     font-size:13px;
     border-collapse:collapse;
 }
 table td, table th{
-    border: 1px solid rgba(0,0,0,0.3);
-    padding:0 10px;
+    border: 1px solid #ddd;
+    padding:5px 10px;
+    vertical-align:top;
 }
 h1, h2, h3, h4, h5, h6 {
     margin-bottom:15px;
@@ -154,7 +155,7 @@ div#pageMatch{ /* viewing match page */
 div#pageTeam{  /* viewing team page */
     display:none;
 }
-div#teamPopup{
+div#popup{
     display:none;
     border:1px solid rgba(0,0,0,0.4);
     border-radius:10px;
@@ -168,6 +169,11 @@ div#teamPopup{
     position:fixed;
     float:left;
     background:#FFFFFF;
+}
+.nametag{
+    background:#E32223 !important;
+    color:#fff;
+    padding: 5px 0 20px !important;
 }
 .mask {
     display: none;
@@ -236,12 +242,32 @@ div#teamPopup{
 .footerText{
     text-align:center;
 }
-
+#debug{
+    border:1px solid #B2B2B2;
+    padding:10px;
+    background:#F9F9F8;
+    width:500px;
+    border-radius:8px;
+    margin:0 auto
+}
 div#editMatch, div#editTeam  {
     /*display:none;*/ /* creates label bug */
 }
 .clear{
     clear:both;
+}
+.longText{
+    height:20px;
+    overflow:hidden;
+    cursor:pointer;
+    text-overflow:ellipsis;
+    white-space:nowrap; 
+}
+.longTextTeam{
+    width:350px;
+}
+.longTextMatch{
+    width:150px;
 }
 span.title {
     text-decoration:none;
@@ -273,8 +299,8 @@ span.title {
 .inline{
     display:inline;
 }
-/*.green{
-    color:#1AD60C;
+.green{
+    color:#1C8E02;
 }
 .yellow{
     color:#C4B20F;
@@ -284,27 +310,25 @@ span.title {
 }
 .blue{
     color:#0213FF;
-}*/
-/*.greenBG{
-    background-color:#11D116;
+}
+.greenBG{
+    background-color:#DFF0D7;
 }
 .yellowBG{
-    background-color:#DDC911;
+    background-color:#FCF8E2;
 }
 .redBG{
-    background-color:#ED1515;
-    color:#fff;
+    background-color:#F2DEDF;
 }
 .blueBG{
-    background-color:#0213FF;
-    color:#fff;
-}*/
+    background-color:#D9EDF6;
+}
 tr:nth-child(odd){
-    background:#eee;
+    background:#F9F9F8 ;
 }
 tr:nth-child(even){
 
 }
 th{
-    background:#D6D6D6;
+
 }
