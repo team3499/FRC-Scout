@@ -5,13 +5,14 @@
  * 
  */
 
+$table_name="your_name";
 $table_team="teams";
 $table_match="matches";
 
 // Checks to see if the database exists
 if (!file_exists('../scout.db')){
     
-    fwrite('../scout.db','');
+    fopen('../scout.db',"w+");
 }
 
 try {

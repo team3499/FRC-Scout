@@ -62,8 +62,8 @@
                      } else {
                         echo '<p class="red">Database does not exist, run ../create.php</p>';
                      }
-                     echo $databaseError;
-                     echo $databaseMessage;
+                     echo isset($databaseError) ? $databaseError : "";
+                     echo isset($databaseMessage) ? $databaseMessage : "";
                 ?> 
                 
                 <div id="resultTeam"> <!-- Debug -->
@@ -73,6 +73,7 @@
 
             </div>
             <!--<script> We will add this before release
+                UNCOMMENT BEFORE RELEASE
                 $('#debug').hide();
                 onKonamiCode.requireEnterKey = false; // True/false
                 onKonamiCode(function(){
