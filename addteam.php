@@ -103,7 +103,7 @@
             <br/><br/>
             <span class="tab1">Shoot:</span> <!-- team-autonomous-shoot -->
             
-                <input id="team-autonomous-shoot-1" class="tab1" type="checkbox" name="team-autonomous-shoot" value="Low:"/>
+                <input id="team-autonomous-shoot-1" class="tab1" type="checkbox" name="team-autonomous-shoot" value="low"/>
                     <label for="team-autonomous-shoot-1">Low</label><br/>
                     
                     &nbsp;&nbsp;&nbsp;<span class="tab5">Shot Accuracy:</span>

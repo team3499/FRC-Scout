@@ -32,6 +32,8 @@ $(document).ready(function(){
     
     hideAll();
     show(views[0]);
+
+    console.log("something1");
 });
 
 // This function binds Events to Button Clicks
@@ -67,6 +69,8 @@ function bindEvents(){
             }
         });
 
+        serializeTeamForm();
+
         return false;
     });
     $('form#addMatch').submit(function(){
@@ -75,37 +79,23 @@ function bindEvents(){
         return false;
     });
    
-}
+    $("#force-push-and-fetch-attempt").click(function(){
+        connectionTick();
+    });
 
-function windowClose(){
-    return ""; // This prevents the user from leaving the page without a conformation dialogue
-}
-
-function clearSelectors(){
-    // Clear the selectors
-    $("#teamDropdown option[value=0]").prop("selected", true);
-    $("#matchDropdown option[value=0]").prop("selected", true);
+    window.scrollTo(0,0);
 }
 
 function hideAll(){
-    for(var i = 0; i < views.length; ++i){
-        $(views[i]).hide();
-    }
+    $(views[0]).hide();
+    $(views[1]).hide();
+    $(views[2]).hide();
 }
 
 // This should be passed the actual ID not the index: ie. show(views[1])
 function show(id){
     hideAll();
     $(id).show();
-    // if(id == views[0]){
-        // hideAll();
-        // $(id).show();
-    // } else if(id == views[1]){
-        // loadTeamForm(0);
-    // } else if(id == views[2]){
-        // loadMatchForm(0);
-    // } else {
-    // }
 }
 
 // Starts the popup when clicking "Add Team"
@@ -125,7 +115,7 @@ function createTeamNumberInputPopup(){
     $('body').append("\
         <div id=\"teamPopup\"><h2>Add Team</h2>\
         Please input a team number.<br/>\
-        <input required autofocus id=\"teamNumber\" type=\"number\" name=\"team-number\" placeholder=\"Ex: 3499\"/>\
+        <input required autofocus id=\"teamNumber\" type=\"number\" maxlength=\"4\" name=\"team-number\" placeholder=\"Ex: 3499\"/>\
         <br/><br/>\
         <span class=\"button\" id=\"submitTeamNumber\">Submit Team Number</span>\
         <span class=\"button\" id=\"submitTeamCancel\">Cancel</span>\
@@ -147,17 +137,12 @@ function createTeamNumberInputPopup(){
     $('#submitTeamCancel, .mask').click(function(){
         closeTeamPopup();
     });
-
-    $("#force-push-and-fetch-attempt").click(function(){
-        connectionTick();
-    });
-    
 }
 
 // This is called when the number input for creating a new team is changed (loses focus)
 // It validates it then closes the popup.
 function isValidTeamNumber(){
-    if(isFinite($("input#teamNumber").val()) && (Math.floor($("input#teamNumber").val()) == $("input#teamNumber").val())){
+    if(($("input#teamNumber").val() != "") && isFinite($("input#teamNumber").val()) && (Math.floor($("input#teamNumber").val()) == $("input#teamNumber").val())){
         // we dont actually do anything here...
         return true;
     } else {
@@ -192,18 +177,14 @@ function closeTeamPopupOK(){
 // Loads the requested thingy onto the page:
 // It creates it if it doesnt exist already
 function teamPopupClosed(){
-    alert("1");
     hideAll();
-    alert("2");
-    window.console.out("1");
     // var views = ["#showDataPage", "#editTeam", "#editMatch"];
 
-    alert("3");
     var newTeamID = $("input#teamNumber").val();
 
     // $("#editTeam").html("");
 
-    window.console.out("2");
+    console.log("Created a new team with id " + newTeamID);
     // newTeamID should always be valid *unless* someone is doing something behind-the-scenes
     // Check to see if there are local edits for a team of this value
     if(teams[newTeamID] !== undefined && teams[newTeamID][0] !== undefined){
@@ -212,41 +193,73 @@ function teamPopupClosed(){
         ; // Create a new team element
     }
 
-    window.console.out("3");
-
     // *Add* this team to the upload queue
     // It is easiest to do this here as oppesed to making a new element and passing this one to the background.
     putTeamInUploadQueue(newTeamID);
 
-    // $("div#editTeam :input").not(':button, :submit, :reset, :hidden').val('').removeAttr('checked').removeAttr('selected');
-    // $("div#editTeam :input").each(function(this){
-        // console.log("Value is: " + this.val());
-        // this.not(':button, :submit, :reset, :hidden').val('').removeAttr('checked').removeAttr('selected');
-        // console.log("Value is: " + this.val());
-        // console.log("");
-    // });
+    $("div#editTeam input[type=radio]").removeAttr("checked");
+    $("div#editTeam input[type=checkbox]").removeAttr("checked");
+    $("div#editTeam input[type=number]").val("");
+    $("div#editTeam textarea").val("");
+    $("div#editTeam input[type=text]").val("");
 
-    window.console.out("STUFF!");
-    window.console.out(JSON.stringify($("div#editTeam :input"), null, 4));
+    // if the team exist
+    if(teams[newTeamID] !== undefined && (teams[newTeamID][0] !== undefined || teams[newTeamID][0] != [])){
+        teamNums.push(newTeamID);
+        loadTeamOntoAddTeamPage(newTeamID);
+    } else {
+        teams[newTeamID] = [];
+        teams[newTeamID][0] = $('div#addTeam').serializeObject();
+        // console.log(JSON.stringify(teams[newTeamID]));
+        // console.log(JSON.stringify($("div#addTeam").serializeObject()));
+    }
 
-    // jQuery.each($("div#editTeam :input"), function(this){
-        // console.log("Value is: " + this.val());
-        // this.not(':button, :submit, :reset, :hidden').val('').removeAttr('checked').removeAttr('selected');
-        // console.log("Value is: " + this.val());
-        // console.log("");
-    // });
+    // serializeTeamForm();
 
-    // $("#editTeam").append("");
-    // $("#editTeam").append("");
-    // $("#editTeam").append("");
-    // $("#editTeam").append("");
-    // $("#editTeam").append("");
-    // $("#editTeam").append("");
-    // $("#editTeam").append("");
-    // $("#editTeam").append("");
-    // 
     show(views[1]);
 }
+
+function loadTeamOntoAddTeamPage(teamID){
+    // alert(JSON.stringify($('div#addTeam').serializeObject()));
+    // console.log(JSON.stringify($('div#addTeam').serializeObject()));
+}
+
+
+function serializeTeamForm(){
+    
+    console.log("serializing...");
+
+    if(teams[$("#teamNumber").val()]    == undefined) teams[$("#teamNumber").val()]    = [];
+    if(teams[$("#teamNumber").val()][0] == undefined) teams[$("#teamNumber").val()][0] = [];
+
+    $("div#addTeam > *").each(function(i, element){
+        if(element) {
+
+            if(element.nodeName == "INPUT"){
+                if(element.type && element.type == "radio"){
+                    if(teams[$("#teamNumber").val()][0][element.name] == undefined) teams[$("#teamNumber").val()][0][element.name] = "";
+                    teams[$("#teamNumber").val()][0][element.name] = $(element).prop("checked");
+
+                } else if(element.type && element.type == "checkbox"){
+                    if(teams[$("#teamNumber").val()][0][element.name] == undefined)
+                        teams[$("#teamNumber").val()][0][element.name] = [];
+                    teams[$("#teamNumber").val()][0][element.name].push([element.value, $(element).prop("checked")]);
+
+                } else if(element.type && element.type == "text"){
+                    teams[$("#teamNumber").val()][0][element.name] = $(element).val();
+                } else /* its a submit button */ {}
+
+            } else if(element.nodeName == "TEXTAREA"){
+                teams[$("#teamNumber").val()][0][element.name] = $(element).val();
+            } else if(element.nodeName == "H4" || element.nodeName == "BR" || element.nodeName == "SPAN" || element.nodeName == "LABEL"){
+            } else /* Add this tag to the debug page */{
+                console.log("UNKNOWN element node name: ");
+                console.log(element.nodeName);
+            }
+        }
+    });
+}
+
 
 
 ////////////////////////
@@ -258,16 +271,12 @@ $.fn.serializeObject = function() {
     var serial = this.serializeArray();
     
     $.each(serial, function() {
-        
         if (o[this.name] !== undefined) {
-            
             if (!o[this.name].push){
                 o[this.name] = [o[this.name]];
             }
             o[this.name] = (this.value || '');
-
-            } else {
-            
+        } else {
             o[this.name] = this.value || '';
         }
     });
