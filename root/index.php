@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css" media="all"/>
     <script src="/js/jquery-2.0.3.min.js"></script>
     <script src="/js/js.js"></script>
-    <script src="/js/jquery.dotdotdot.min.js"></script>
-
 </head>
 <body>
 

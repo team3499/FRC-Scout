@@ -32,8 +32,8 @@ $(document).ready(function(){
     
     hideAll();
     show(views[0]);
-
-    console.log("something1");
+    
+    window.scrollTo(0,0);
 });
 
 // This function binds Events to Button Clicks
@@ -61,6 +61,10 @@ function bindEvents(){
     });
     
     $('div#addTeam input[type=submit]').click(function(){
+        serializeTeamForm();
+        console.log("teams:");
+        console.log(teams);
+
         var team_json = JSON.stringify(teams);
         $('#resultTeam').text(team_json);
 
@@ -73,7 +77,7 @@ function bindEvents(){
             }
         });
 
-        serializeTeamForm();
+        // serializeTeamForm();
 
         return false;
     });
@@ -87,7 +91,6 @@ function bindEvents(){
         connectionTick();
     });
 
-    window.scrollTo(0,0);
 }
 
 function hideAll(){
@@ -100,6 +103,7 @@ function hideAll(){
 function show(id){
     hideAll();
     $(id).show();
+    console.log("show(" + id + ") called");
 }
 
 // Starts the popup when clicking "Add Team"
@@ -201,19 +205,21 @@ function teamPopupClosed(){
     // It is easiest to do this here as oppesed to making a new element and passing this one to the background.
     putTeamInUploadQueue(newTeamID);
 
+    // Clear all the fields on the form
     $("div#editTeam input[type=radio]").removeAttr("checked");
     $("div#editTeam input[type=checkbox]").removeAttr("checked");
     $("div#editTeam input[type=number]").val("");
     $("div#editTeam textarea").val("");
     $("div#editTeam input[type=text]").val("");
 
-    // if the team exist
+    // if the team exists
     if(teams[newTeamID] !== undefined && (teams[newTeamID][0] !== undefined || teams[newTeamID][0] != [])){
         teamNums.push(newTeamID);
         loadTeamOntoAddTeamPage(newTeamID);
     } else {
-        teams[newTeamID] = [];
-        teams[newTeamID][0] = $('div#addTeam').serializeObject();
+        // This has to be set here
+        currentTeam = $("input#teamNumber").val();
+        serializeTeamForm();
         // console.log(JSON.stringify(teams[newTeamID]));
         // console.log(JSON.stringify($("div#addTeam").serializeObject()));
     }
@@ -231,42 +237,50 @@ function loadTeamOntoAddTeamPage(teamID){
 
 function serializeTeamForm(){
     
+
     console.log("serializing...");
 
-    if(teams[$("#teamNumber").val()]    == undefined) teams[$("#teamNumber").val()]    = [];
-    if(teams[$("#teamNumber").val()][0] == undefined) teams[$("#teamNumber").val()][0] = [];
+    if(teams[currentTeam]    == undefined) teams[currentTeam]    = [];
+    if(teams[currentTeam][0] == undefined) teams[currentTeam][0] = [];
 
     $("div#addTeam > *").each(function(i, element){
         if(element) {
 
             if(element.nodeName == "INPUT"){
                 if(element.type && element.type == "radio"){
-                    if(teams[$("#teamNumber").val()][0][element.name] == undefined) teams[$("#teamNumber").val()][0][element.name] = "";
-                    teams[$("#teamNumber").val()][0][element.name] = $(element).prop("checked");
+                    if(teams[currentTeam][0][element.name] == undefined) teams[currentTeam][0][element.name] = "";
+                    teams[currentTeam][0][element.name] = $(element).prop("checked");
 
                 } else if(element.type && element.type == "checkbox"){
-                    if(teams[$("#teamNumber").val()][0][element.name] == undefined)
-                        teams[$("#teamNumber").val()][0][element.name] = [];
-                    teams[$("#teamNumber").val()][0][element.name].push([element.value, $(element).prop("checked")]);
+                    if(teams[currentTeam][0][element.name] == undefined)
+                        teams[currentTeam][0][element.name] = [];
+                    teams[currentTeam][0][element.name].push([element.value, $(element).prop("checked")]);
 
                 } else if(element.type && element.type == "text"){
-                    teams[$("#teamNumber").val()][0][element.name] = $(element).val();
+                    teams[currentTeam][0][element.name] = $(element).val();
                 } else /* its a submit button */ {}
 
             } else if(element.nodeName == "TEXTAREA"){
-                teams[$("#teamNumber").val()][0][element.name] = $(element).val();
+                teams[currentTeam][0][element.name] = $(element).val();
             } else if(element.nodeName == "H4" || element.nodeName == "BR" || element.nodeName == "SPAN" || element.nodeName == "LABEL"){
             } else /* Add this tag to the debug page */{
                 console.log("UNKNOWN element node name: ");
                 console.log(element.nodeName);
             }
         }
+    });
+
+    console.log($("input#teamNumber").val());
+    console.log(teams);
 }
 
 
 // Starts when the user wants to close the popup
 function closePopup(){
     $("#popup").fadeOut(200, function(){
+        $(this).remove(0);
+    });
+    $('.mask').fadeOut(200, function(){
         $(this).remove(0);
     });
 }
