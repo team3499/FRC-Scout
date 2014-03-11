@@ -19,4 +19,12 @@ PHP:
 
 Get stuff working
 
-edit the todo list
+add reliability percentages in 'addmatch.php' with team numbers next to them
+    -physical description of robot (notes?)
+    -auto add team to db if they dont exist
+    -add match score
+    - when input team number, put team name besides it?
+
+-remove team score from index.php table
+    - add 'clear database' button - warning popup when clicked
+    -add 'save database' button - name should be Scout-DATE.db

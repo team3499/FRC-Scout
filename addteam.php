@@ -32,8 +32,8 @@
             
                 <textarea class="tab2" name="team-drive" value="" rows="5" style="width:60%;"/></textarea>
         
-        <br/><br/>
-        <h4>Catch: </h4> <!-- team-catch -->
+        <br/><br/><br/>
+        <h4 class="inline">Does it Catch: </h4> <!-- team-catch -->
         
             <input id="team-catch-1" class="tab1" type="radio" name="team-catch" value="yes"/>
                 <label for="team-catch-1">Yes</label>
@@ -41,11 +41,8 @@
             <input id="team-catch-2" class="tab1" type="radio" name="team-catch" value="no"/>
                 <label for="team-catch-2">No</label><br/>
                 
-            <span class="tab1">Reliably:</span>
-                <input class="tab1" style="width:50px;" type="number" name="team-catch-percent" maxlength="3" placeholder="Ex: 50"/>%
-        
         <br/><br/>
-        <h4>Pick Up:</h4> <!-- team-pickup -->
+        <h4 class="inline">Does it Pick Up:</h4> <!-- team-pickup -->
         
             <input id="team-pickup-1" class="tab1" type="radio" name="team-pickup" value="yes"/>
                 <label for="team-pickup-1">Yes&nbsp;&nbsp;</label>
@@ -74,8 +71,8 @@
                 <input id="team-pickup-ease-3" class="tab1" type="radio" name="team-pickup-ease" value="stop"/>
                     <label for="team-pickup-ease-3">Stop &amp; Carefully</label>
                 
-        <br/><br/>
-        <h4>Throw:</h4> <!-- team-throw -->
+        <br/><br/><br/>
+        <h4 class="inline">Does it Throw / Shoot:</h4> <!-- team-throw -->
         
             <input id="team-throw-1" class="tab1" type="radio" name="team-throw" value="yes"/>
                 <label for="team-throw-1">Yes&nbsp;</label>
@@ -83,16 +80,13 @@
             <input id="team-throw-2" class="tab1" type="radio" name="team-throw" value="no"/>
                 <label for="team-throw-2">No</label><br/>
             
-            <span class="tab1">Shot Accuracy:</span>
-                <input class="tab1" style="width:50px;" type="number" name="team-throw-percent" maxlength="3" placeholder="Ex: 50"/>%
-            
         <br/><br/>
-        <h4>Push The Ball:</h4> <!-- team-push -->
+        <h4>How Does it Push the Ball:</h4> <!-- team-push -->
         
             <textarea class="tab2" name="team-push" value="" rows="5" style="width:60%;" placeholder="Ex: The robot herds by..."/></textarea>
             
         <br/><br/>
-        <h4>Autonomous:</h4> <!-- team-autonomous -->
+        <h4 class="inline">Does it have Autonomous:</h4> <!-- team-autonomous -->
         
             <input id="team-autonomous-1" class="tab1" type="radio" name="team-autonomous" value="yes"/>
                 <label for="team-autonomous-1">Yes&nbsp;</label>
@@ -106,27 +100,14 @@
                 <input id="team-autonomous-shoot-1" class="tab1" type="checkbox" name="team-autonomous-shoot" value="low"/>
                     <label for="team-autonomous-shoot-1">Low</label><br/>
                     
-                    &nbsp;&nbsp;&nbsp;<span class="tab5">Shot Accuracy:</span>
-                        <input class="tab1" style="width:50px;" type="number" name="team-autonomous-shoot-percent" maxlength="3" placeholder="Ex: 50"/>%<br/>
-                        
                 &nbsp;&nbsp;<input id="team-autonomous-shoot-2" class="tab4" type="checkbox" name="team-autonomous-shoot" value="average"/>
                     <label for="team-autonomous-shoot-2">High</label><br/>
                     
-                    &nbsp;&nbsp;&nbsp;<span class="tab5">Shot Accuracy:</span>
-                        <input class="tab1" style="width:50px;" type="number" name="team-autonomous-shoot-percent" maxlength="3" placeholder="Ex: 50"/>%<br/>
-                
-                &nbsp;&nbsp;&nbsp;<span class="tab5">Wait For Action Time:</span>
-                    <input id="team-autonomous-AT-1" class="tab1" type="radio" name="team-autonomous-AT" value="yesAT"/>  
-                        <label for="team-autonomous-AT-1">Yes</label>
-                        
-                    <input id="team-autonomous-AT-2" class="tab1" type="radio" name="team-autonomous-AT" value="noAT"/>
-                        <label for="team-autonomous-AT-1">No</label><br/>
-            
                 &nbsp;&nbsp;<input id="team-autonomous-shoot-3" class="tab4" type="checkbox" name="team-autonomous-shoot" value="none"/>
                     <label for="team-autonomous-shoot-3">None</label>
             
             <br/><br/>
-            <span class="tab1">Go To Zone:</span> <!-- team-autonomous-zone -->
+            <span class="tab1">Moves To Point Zone:</span> <!-- team-autonomous-zone -->
             
                 <input id="team-autonomous-zone-1" class="tab1" type="radio" name="team-autonomous-zone" value="yes"/>
                     <label for="team-autonomous-zone-1">Yes</label>
@@ -137,14 +118,14 @@
             <br/><br/>
             <span class="tab1">Start Position:</span><br/> <!-- team-autonomous-start -->
             
-                <textarea class="tab2" name="team-autonomous-start" value="" rows="5" style="width:60%;" placeholder="Ex: Left side facing red"/></textarea>
+                <textarea class="tab2" name="team-autonomous-start" value="" rows="5" style="width:60%;" placeholder="Ex: Left side"/></textarea>
         
         <br/><br/>
-        <h4>Notes:</h4> <!-- team-notes -->
+        <h4>Notes / Robot Description:</h4> <!-- team-notes -->
         
             <textarea class="tab2" name="team-notes" value="" rows="5" style="width:60%;" placeholder="Ex: They have a unique shooter"/></textarea>
         
-        <br/><br/>
+        <br/><br/> <!-- Remove when working -->
         <input class="right" type="submit" value="Submit Team Info" name="submit-team"/>
         
         <br class="clear" />
